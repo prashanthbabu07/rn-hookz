@@ -14,7 +14,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import HomeIconWithBadge from './components/HomeIconWithBadge';
 import DefaultApp from './DefaultApp';
 import SQLite from 'react-native-sqlite-storage';
-import { throwStatement } from '@babel/types';
+//import { throwStatement } from '@babel/types';
 
 
 class HomeScreen extends React.Component {
