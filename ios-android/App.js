@@ -8,7 +8,7 @@ import { Text, View, Button, StyleSheet } from 'react-native';
 import {
     createBottomTabNavigator,
     createAppContainer,
-    createStackNavigator
+    createStackNavigator,
 } from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import HomeIconWithBadge from './components/HomeIconWithBadge';
@@ -25,7 +25,12 @@ class HomeScreen extends React.Component {
 
     render() {
         return (
-            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            <View
+                style={{
+                    flex: 1,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                }}>
                 {/* other code from before here */}
                 <Button
                     title="Go to Details"
@@ -43,18 +48,22 @@ class SettingsScreen extends React.Component {
         this._db = SQLite.openDatabase({
             name: 'hookz.sqlite3',
             location: 'default',
-            createFromLocation: 1//'~www/hookz.db',
+            createFromLocation: 1, //'~www/hookz.db',
         })
             .then(db => {
                 //this._db = db;
-                console.log("**********Database open**********");
+                console.log('**********Database open**********');
                 db.transaction(tx => {
-                    tx.executeSql('SELECT * FROM user_account;', [], (tx, results) => {
-                        console.log("***********SQL Completed***********");
-                        // console.log(results)
-                        const rows = results.rows;
-                        console.log(`Rows in table ${rows.length}`);
-                    })
+                    tx.executeSql(
+                        'SELECT * FROM user_account;',
+                        [],
+                        (tx, results) => {
+                            console.log('***********SQL Completed***********');
+                            // console.log(results)
+                            const rows = results.rows;
+                            console.log(`Rows in table ${rows.length}`);
+                        },
+                    );
                 });
             })
             .catch(error => {
@@ -73,7 +82,7 @@ class SettingsScreen extends React.Component {
         //   }
         // );
 
-        console.log(`*******DB State ${this._db.state}`)
+        console.log(`*******DB State ${this._db.state}`);
 
         // console.log("SQL Call");
         // this._db.transaction(tx => {
@@ -89,7 +98,7 @@ class SettingsScreen extends React.Component {
     };
 
     componentDidMount() {
-        console.log("***********SQL Call***********");
+        console.log('***********SQL Call***********');
         // this._db.transaction(tx => {
         //   tx.executeSql('SELECT * FROM user_account;', [], (tx, results) => {
         //     console.log("***********SQL Completed***********");
@@ -144,13 +153,11 @@ const SettingsStack = createStackNavigator({
 
 
 
-const tabNavigator = createBottomTabNavigator(
-    {
-        Settings: SettingsScreen,
-        Contacts: HomeScreen,
-        Timeline: DefaultApp
-    },
-    {
+const tabNavigator = createBottomTabNavigator({
+    Settings: SettingsScreen,
+    Contacts: HomeScreen,
+    Timeline: DefaultApp
+}, {
         defaultNavigationOptions: ({ navigation }) => ({
             tabBarIcon: ({ focused, horizontal, tintColor }) => {
                 const { routeName } = navigation.state;
