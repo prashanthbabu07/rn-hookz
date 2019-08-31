@@ -55,7 +55,7 @@ class SettingsScreen extends React.Component {
                 console.log('**********Database open**********');
                 db.transaction(tx => {
                     tx.executeSql(
-                        'SELECT * FROM user_account;',
+                        'SELECT * FROM account;',
                         [],
                         (tx, results) => {
                             console.log('***********SQL Completed***********');
