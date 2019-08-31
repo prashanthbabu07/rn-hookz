@@ -23,7 +23,6 @@
 		883366D32317E80E00FD66AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883366D22317E80E00FD66AF /* AppDelegate.swift */; };
 		8877B4EB23168DFC00637C01 /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8877B4EA23168DFB00637C01 /* icomoon.ttf */; };
 		888EA2C22319334A00A0FE58 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 888EA2C12319334A00A0FE58 /* www */; };
-		88F0DF56231A3F7B00A6DCB6 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F0DF55231A3F7B00A6DCB6 /* Test.swift */; };
 		89AB3476C0264C2D4DDF724E /* libPods-Hookz.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A8527FD7CC92A12289B3FA3 /* libPods-Hookz.a */; };
 		973EDF0E20F8480096346143 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7981534669C4FF88F459696 /* Zocial.ttf */; };
 		99A59011C0AA06EBD549331C /* libPods-Hookz-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F329153B39717F6286E6D0 /* libPods-Hookz-tvOSTests.a */; };
@@ -87,7 +86,6 @@
 		883366D22317E80E00FD66AF /* AppDelegate.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; indentWidth = 4; path = AppDelegate.swift; sourceTree = "<group>"; tabWidth = 4; };
 		8877B4EA23168DFB00637C01 /* icomoon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = icomoon.ttf; sourceTree = "<group>"; };
 		888EA2C12319334A00A0FE58 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = Hookz/www; sourceTree = "<group>"; };
-		88F0DF55231A3F7B00A6DCB6 /* Test.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; tabWidth = 4; };
 		8A5ECC71EB7919018080EA3A /* Pods-Hookz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hookz.debug.xcconfig"; path = "Target Support Files/Pods-Hookz/Pods-Hookz.debug.xcconfig"; sourceTree = "<group>"; };
 		904F4B22221C4A7A920054C8 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		925A83F58BE5BE04DEF53A7D /* Pods-Hookz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hookz.release.xcconfig"; path = "Target Support Files/Pods-Hookz/Pods-Hookz.release.xcconfig"; sourceTree = "<group>"; };
@@ -167,7 +165,6 @@
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				883366D22317E80E00FD66AF /* AppDelegate.swift */,
 				883366D12317E80D00FD66AF /* Hookz-Bridging-Header.h */,
-				88F0DF55231A3F7B00A6DCB6 /* Test.swift */,
 			);
 			name = Hookz;
 			sourceTree = "<group>";
@@ -679,7 +676,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				883366D32317E80E00FD66AF /* AppDelegate.swift in Sources */,
-				88F0DF56231A3F7B00A6DCB6 /* Test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
