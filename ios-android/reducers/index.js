@@ -3,13 +3,20 @@ import counterReducer from './CounterReducer';
 import visibleReducer from './VisibleReducer';
 import thunk from 'redux-thunk';
 import logger from '../middlewares/Logger';
-import signalr from '../middlewares/SignalRMiddleware';
+import signalr from '../middlewares/SignalR';
 
-const allReducers = combineReducers({
+const combinedReducers = combineReducers({
     counter: counterReducer,
     signed: visibleReducer
 });
 
-const store = createStore(allReducers, applyMiddleware(thunk, logger, signalr('https://api.chilzin.com/messages')));
+const store = createStore(
+    combinedReducers,
+    applyMiddleware(
+        thunk,
+        logger,
+        signalr('https://api.chilzin.com/messages')
+    )
+);
 
 export default store;
