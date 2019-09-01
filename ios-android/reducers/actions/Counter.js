@@ -1,6 +1,6 @@
 export const INCREMENT_COUNTER = 'INCREMENT_COUNTER';
 export const DECREMENT_COUNTER = 'DECREMENT_COUNTER';
-export const TOGGLE = "TOGGLE";
+
 
 export function increment()
 {
@@ -13,13 +13,6 @@ export function decrement()
 {
     return {
         type: DECREMENT_COUNTER
-    };
-}
-
-export function toggle()
-{
-    return {
-        type: TOGGLE
     };
 }
 

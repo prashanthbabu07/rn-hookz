@@ -1,6 +1,6 @@
-import { TOGGLE } from '../components/CounterActions';
+import { TOGGLE } from './actions/Signed';
 
-const visibleReducer = (state = false, action) => 
+const visibleReducer = (state = true, action) => 
 {
     switch (action.type)
     {

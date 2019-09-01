@@ -1,4 +1,4 @@
-import { INCREMENT_COUNTER, DECREMENT_COUNTER } from '../components/CounterActions';
+import { INCREMENT_COUNTER, DECREMENT_COUNTER } from './actions/Counter';
 
 const counterReducer = (state = 0, action) =>
 {
