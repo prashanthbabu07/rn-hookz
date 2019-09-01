@@ -14,7 +14,6 @@ const signalr = (url) =>
 
         connection.on('send', data =>
         {
-            //console.log('dispatch actions from here', data);
             let event = JSON.parse(data);
             if (event.messageType === 'NewConversationMessageAdded')
             {
@@ -23,22 +22,27 @@ const signalr = (url) =>
             }
         });
 
-        connection.start()
-            .then(r =>
-            {
-                console.log('signalr connection successful');
-            })
-            .catch(error =>
-            {
-                console.log(error);
-            });
-
-        console.log('**********signalr', url);
-
-        return next => action =>
+        const startConnection = () =>
         {
-            return next(action);
+            connection.start()
+                .then(r =>
+                {
+                    connection.onclose(() =>
+                    {
+                        startConnection();
+                    });
+                })
+                .catch(error =>
+                {
+                    setTimeout(() =>
+                    {
+                        startConnection();
+                    }, 5000);
+                });
         }
+        startConnection();
+
+        return next => action => next(action);
     }
 }
 
