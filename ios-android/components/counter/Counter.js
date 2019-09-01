@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
 
 const Counter = () =>
 {
-    const counter = useSelector(state => state.counter);
+    const counterState = useSelector(state => state.counter);
     const signed = useSelector(state => state.signed);
     const dispatch = useDispatch();
 
@@ -44,7 +44,7 @@ const Counter = () =>
                         title="+" style={styles.counter}
                         onPress={() => dispatch(increment())}>
                     </Button>
-                    <Text style={styles.counter}>{counter}</Text>
+                    <Text style={styles.counter}>{counterState.counter}</Text>
                     <Button
                         title="-" style={styles.counter}
                         onPress={() => dispatch(decrement())}>
