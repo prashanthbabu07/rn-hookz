@@ -7,7 +7,8 @@
  */
 
 import React, { Fragment } from 'react';
-import {
+import
+{
     SafeAreaView,
     StyleSheet,
     ScrollView,
@@ -16,7 +17,8 @@ import {
     StatusBar,
 } from 'react-native';
 
-import {
+import
+{
     Header,
     LearnMoreLinks,
     Colors,
@@ -25,7 +27,8 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import HeaderScrollView from 'react-native-header-scroll-view';
 
-const DefaultApp = () => {
+const DefaultApp = () =>
+{
     return (
         <Fragment>
             <StatusBar barStyle="dark-content" />
