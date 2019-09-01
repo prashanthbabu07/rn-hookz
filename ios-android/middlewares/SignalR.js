@@ -25,7 +25,7 @@ const signalr = (url) =>
         const startConnection = () =>
         {
             connection.start()
-                .then(r =>
+                .then(() =>
                 {
                     connection.onclose(() =>
                     {
