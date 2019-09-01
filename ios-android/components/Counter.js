@@ -16,7 +16,7 @@ import
     TouchableOpacity
 } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement, toggle } from './CounterActions';
+import { increment, decrement, toggle, incrementAsync } from './CounterActions';
 
 const styles = StyleSheet.create({
     container: {
@@ -39,7 +39,7 @@ const Counter = () =>
     return (
         <View style={styles.container}>
             {signed ?
-                <View style={{ flexDirection: 'row', width: 200, justifyContent: 'space-around' }}>
+                <View style={{ flexDirection: 'row', width: 300, justifyContent: 'space-around' }}>
                     <Button
                         title="Increase" style={styles.counter}
                         onPress={() => dispatch(increment())}
@@ -49,6 +49,11 @@ const Counter = () =>
                     <Button
                         title="Decrease" style={styles.counter}
                         onPress={() => dispatch(decrement())}
+                    >
+                    </Button>
+                    <Button
+                        title="+Async" style={styles.counter}
+                        onPress={() => dispatch(incrementAsync())}
                     >
                     </Button>
                 </View> : <View></View>
