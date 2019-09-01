@@ -1,6 +1,6 @@
 import { TOGGLE } from './actions/Signed';
 
-const visibleReducer = (state = true, action) => 
+const signedReducer = (state = true, action) => 
 {
     switch (action.type)
     {
@@ -11,4 +11,4 @@ const visibleReducer = (state = true, action) =>
     }
 }
 
-export default visibleReducer;
+export default signedReducer;
