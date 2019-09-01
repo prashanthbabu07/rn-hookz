@@ -30,12 +30,9 @@ const signalr = (url) =>
 
         console.log("**********signalr", url);
 
-        return store =>
+        return next => action =>
         {
-            return next => action =>
-            {
-                return next(action);
-            }
+            return next(action);
         }
     }
 }
