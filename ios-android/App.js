@@ -9,6 +9,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { INCREMENT_COUNTER, DECREMENT_COUNTER, TOGGLE } from './reducers/actions/Counter';
 import store from './reducers';
+import DocumentSigner from './experiments/webviews/DocumentSigner';
 
 export default class App extends Component
 {
@@ -16,7 +17,8 @@ export default class App extends Component
     {
         return (
             <Provider store={store}>
-                <Counter />
+                {/* <Counter /> */}
+                <DocumentSigner />
             </Provider>
         )
     }

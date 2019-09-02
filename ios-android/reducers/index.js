@@ -17,7 +17,7 @@ const store = createStore(
         logger,
         crashReporter,
         thunk,
-        signalr('https://api.chilzin.com/messages')
+        //signalr('https://api.chilzin.com/messages')
     )
 );
 
