@@ -21,6 +21,7 @@
 		821C979C11314592ACE76AF2 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5492798079CF46E3A27582AC /* Octicons.ttf */; };
 		8560013FDFE4452EAB657FE4 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BC8F6DDDB7DA4798B1E1D96B /* MaterialCommunityIcons.ttf */; };
 		883366D32317E80E00FD66AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883366D22317E80E00FD66AF /* AppDelegate.swift */; };
+		88677026231D806300F29684 /* Web.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 88677025231D806200F29684 /* Web.bundle */; };
 		8877B4EB23168DFC00637C01 /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8877B4EA23168DFB00637C01 /* icomoon.ttf */; };
 		888EA2C22319334A00A0FE58 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 888EA2C12319334A00A0FE58 /* www */; };
 		89AB3476C0264C2D4DDF724E /* libPods-Hookz.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A8527FD7CC92A12289B3FA3 /* libPods-Hookz.a */; };
@@ -84,6 +85,7 @@
 		7E3AFCC695C5CE06282C354A /* Pods-Hookz-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hookz-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-Hookz-tvOS/Pods-Hookz-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		883366D12317E80D00FD66AF /* Hookz-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Hookz-Bridging-Header.h"; sourceTree = "<group>"; };
 		883366D22317E80E00FD66AF /* AppDelegate.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; indentWidth = 4; path = AppDelegate.swift; sourceTree = "<group>"; tabWidth = 4; };
+		88677025231D806200F29684 /* Web.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Web.bundle; path = ../html/Web.bundle; sourceTree = "<group>"; };
 		8877B4EA23168DFB00637C01 /* icomoon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = icomoon.ttf; sourceTree = "<group>"; };
 		888EA2C12319334A00A0FE58 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = Hookz/www; sourceTree = "<group>"; };
 		8A5ECC71EB7919018080EA3A /* Pods-Hookz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hookz.debug.xcconfig"; path = "Target Support Files/Pods-Hookz/Pods-Hookz.debug.xcconfig"; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 		13B07FAE1A68108700A75B9A /* Hookz */ = {
 			isa = PBXGroup;
 			children = (
+				88677025231D806200F29684 /* Web.bundle */,
 				888EA2C12319334A00A0FE58 /* www */,
 				8877B4EC2316908600637C01 /* Assets */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
@@ -428,6 +431,7 @@
 				B5B4431BF41D44CBBA2EF57E /* Fontisto.ttf in Resources */,
 				64BC645790384B42A7189C8A /* Foundation.ttf in Resources */,
 				FC1EB1AB0BD34341AF3E1DA8 /* Ionicons.ttf in Resources */,
+				88677026231D806300F29684 /* Web.bundle in Resources */,
 				8560013FDFE4452EAB657FE4 /* MaterialCommunityIcons.ttf in Resources */,
 				A0B700A245F144BCA8344545 /* MaterialIcons.ttf in Resources */,
 				821C979C11314592ACE76AF2 /* Octicons.ttf in Resources */,

@@ -1,5 +1,22 @@
 import React, { Component } from 'react';
 import { WebView } from 'react-native-webview';
+import { Platform } from 'react-native';
+
+const sourceUri = (
+    Platform.OS === 'android'
+        ? 'file:///android_asset/'
+        : ''
+) + 'Web.bundle/loader.html';
+
+const params = 'platform=' + Platform.OS;
+
+const injectedJS = `
+  if (!window.location.search) {
+    var link = document.getElementById('progress-bar');
+    link.href = './site/index.html?${params}';
+    link.click();
+  }
+`;
 
 const DocumentSigner = () => 
 {
@@ -17,14 +34,14 @@ const DocumentSigner = () =>
     //     true;
     // }
 
-    // setTimeout(() =>
-    // {
-    //     // console.log('************', refWebView);
-    //     refWebView.postMessage("Hello from RN");
-    //     // var script = "(" + injectScript.toString() + "());";
-    //     // console.log(script);
-    //     // refWebView.injectJavaScript(script);
-    // }, 5000);
+    setTimeout(() =>
+    {
+        // console.log('************', refWebView);
+        refWebView.postMessage("Hello from RN");
+        // var script = "(" + injectScript.toString() + "());";
+        // console.log(script);
+        // refWebView.injectJavaScript(script);
+    }, 5000);
 
     setTimeout(() =>
     {
@@ -32,19 +49,33 @@ const DocumentSigner = () =>
     }, 5000);
 
     return (
+
         <WebView
-            // source={{ uri: 'https://www.chilzin.com' }}
-            source={{
-                html: require('./Document.js')()
-            }}
-            originWhitelist={['*']}
-            style={{ marginTop: 50 }}
             ref={ref => (refWebView = ref)}
+            injectedJavaScript={injectedJS}
+            source={{ uri: sourceUri }}
+            javaScriptEnabled={true}
+            originWhitelist={['*']}
+            allowFileAccess={true}
             onMessage={event =>
             {
-                alert(event.nativeEvent.data);
+                console.log(event.nativeEvent.data);
             }}
         />
+
+        // <WebView
+        //     // source={{ uri: 'https://www.chilzin.com' }}
+        //     source={{
+        //         html: require('./Document.js')()
+        //     }}
+        //     originWhitelist={['*']}
+        //     style={{ marginTop: 50 }}
+        //     ref={ref => (refWebView = ref)}
+        //     onMessage={event =>
+        //     {
+        //         alert(event.nativeEvent.data);
+        //     }}
+        // />
     );
 }
 
