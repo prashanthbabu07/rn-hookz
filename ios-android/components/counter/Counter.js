@@ -32,37 +32,39 @@ const styles = StyleSheet.create({
 
 const Counter = () =>
 {
-    const counterState = useSelector(state => state.counter);
-    const signed = useSelector(state => state.signed);
-    const dispatch = useDispatch();
+    //const counterState = useSelector(state => state.counter);
+    //const signed = useSelector(state => state.signed);
+    //const dispatch = useDispatch();
 
     return (
-        <View style={styles.container}>
-            {signed ?
-                <View style={{ flexDirection: 'row', width: 300, justifyContent: 'space-around' }}>
-                    <Button
-                        title="+" style={styles.counter}
-                        onPress={() => dispatch(increment())}>
-                    </Button>
-                    <Text style={styles.counter}>{counterState.counter}</Text>
-                    <Button
-                        title="-" style={styles.counter}
-                        onPress={() => dispatch(decrement())}>
-                    </Button>
-                    <Button
-                        title="+Async" style={styles.counter}
-                        onPress={() => dispatch(incrementAsync())}>
-                    </Button>
-                </View> : <View></View>
-            }
-            <View>
-                <Button
-                    title={signed ? 'Hide' : 'Show'}
-                    onPress={() => dispatch(toggle())}>
-                </Button>
-            </View>
-        </View>
+        <Text style={styles.counter}>{counterState.counter}</Text>
     );
+
+    // return (
+    //     // <View style={styles.container}>
+    //     <View style={{ flexDirection: 'row', width: 300, justifyContent: 'space-around' }}>
+    //         {/* <Button
+    //             title="+" style={styles.counter}
+    //             onPress={() => dispatch(increment())}>
+    //         </Button> */}
+    //         <Text style={styles.counter}>{counterState.counter}</Text>
+    //         {/* <Button
+    //             title="-" style={styles.counter}
+    //             onPress={() => dispatch(decrement())}>
+    //         </Button>
+    //         <Button
+    //             title="+Async" style={styles.counter}
+    //             onPress={() => dispatch(incrementAsync())}>
+    //         </Button> */}
+    //     </View>
+    //     // {/* <View>
+    //     //     <Button
+    //     //         title={signed ? 'Hide' : 'Show'}
+    //     //         onPress={() => dispatch(toggle())}>
+    //     //     </Button>
+    //     // </View> */}
+    //     // </View>
+    // );
 }
 
 export default Counter;
