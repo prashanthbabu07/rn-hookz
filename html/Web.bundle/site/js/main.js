@@ -11,7 +11,7 @@ var qs = (window.location.search.match(/([^=?&]+=[^&]+)/g) || []).reduce(functio
 
 setTimeout(function ()
 {
-    window.ReactNativeWebView.postMessage("Hello from WebView...")
+    window.ReactNativeWebView.postMessage("Hello from WebView...");
 }, 2000)
 
 switch (qs.platform)
