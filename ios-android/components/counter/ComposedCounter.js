@@ -38,11 +38,13 @@ const Temp = () =>
     )
 }
 
-const ComposedCounter = () =>
+const ComposedCounter = (props) =>
 {
     //const counterState = useSelector(state => state.counter);
     const signed = useSelector(state => state.signed);
     const dispatch = useDispatch();
+
+    console.log('********', props);
 
     return (
         <View style={styles.container}>

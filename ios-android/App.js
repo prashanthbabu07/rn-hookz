@@ -17,8 +17,8 @@ export default class App extends Component
     {
         return (
             <Provider store={store}>
-                {/* <ComposedCounter /> */}
-                <DocumentSigner />
+                <ComposedCounter name='Counter' />
+                {/* <DocumentSigner /> */}
             </Provider>
         )
     }

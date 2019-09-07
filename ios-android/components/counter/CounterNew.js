@@ -68,6 +68,10 @@ const CounterNew = () =>
                 title="+Async" style={styles.counter}
                 onPress={() => dispatch(incrementAsync())}>
             </Button>
+            <Button
+                title="Key" style={styles.counter}
+                onPress={() => dispatch(incrementAsync())}>
+            </Button>
         </View>
     )
 }

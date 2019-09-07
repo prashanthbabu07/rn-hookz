@@ -1,3 +1,5 @@
+import { nacl } from 'tweetnacl';
+
 export const INCREMENT_COUNTER = 'INCREMENT_COUNTER';
 export const DECREMENT_COUNTER = 'DECREMENT_COUNTER';
 
@@ -24,5 +26,13 @@ export function incrementAsync(delay = 1000)
         {
             dispatch(increment());
         }, delay);
+    };
+}
+
+export function generateKeyPair()
+{
+    return dispatch => 
+    {
+        
     };
 }
