@@ -1,70 +1,28 @@
-import React from 'react';
+import { Platform } from 'react-native';
 import
 {
-    View,
-    Text,
-    StyleSheet,
-    TouchableOpacity
-} from 'react-native';
-import { Button } from 'react-native-elements';
+    createBottomTabNavigator,
+    createAppContainer,
+    createStackNavigator,
+} from 'react-navigation';
+import OnBoardingHome from './OnBoardingHome';
+import OnBoardingRegistration from './OnBoardingRegistration';
 
-const OnBoarding = () => 
-{
-    return (
-        <View style={styles.container}>
-            <View style={{
-                flex: 1,
-                justifyContent: 'flex-end',
-                alignItems: 'center'
-            }}>
-                <Text style={styles.mainTitle}>Hookz</Text>
-                <Text style={styles.subTitle}>a unified end to end encrypted collaboration platform</Text>
-            </View>
-            <View style={styles.bottom}>
-                <TouchableOpacity style={styles.button}>
-                    <Text style={styles.text}>Next</Text>
-                </TouchableOpacity>
-                {/* <Button title="Next"></Button> */}
-            </View>
-        </View>
-    );
-}
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
+const OnBoardingNavigation = createStackNavigator({
+    Home: {
+        screen: OnBoardingHome,
+        // headerMode: 'none'
+        navigationOptions: {
+            header: null
+        }
     },
-    mainTitle: {
-        fontSize: 40,
-        fontWeight: 'bold',
-        color: 'steelblue'
-    },
-    subTitle: {
-        fontSize: 16,
-        padding: 20,
-        textAlign: 'center'
-        // color: 'darkslategrey'
-    },
-    bottom: {
-        flex: 1,
-        justifyContent: 'flex-end',
-        width: '80%'
-    },
-    button: {
-        height: 50,
-        marginBottom: 36,
-        justifyContent: 'center',
-        borderRadius: 10,
-        backgroundColor: 'steelblue'
-    },
-    text: {
-        fontWeight: 'bold',
-        fontSize: 20,
-        textAlign: 'center',
-        color: 'whitesmoke'
+    Registration: {
+        screen: OnBoardingRegistration,
+        // headerMode: 'none'
+        // headerMode: Platform.OS == 'ios' ? 'float' : 'none'
     }
+}, {
+    // headerMode: 'none'
 });
 
-export default OnBoarding;
+export default createAppContainer(OnBoardingNavigation);
