@@ -10,6 +10,7 @@ import { Provider } from 'react-redux';
 import { INCREMENT_COUNTER, DECREMENT_COUNTER, TOGGLE } from './reducers/actions/Counter';
 import store from './reducers';
 import DocumentSigner from './experiments/webviews/DocumentSigner';
+import OnBoarding from './components/onboarding/OnBoarding';
 
 export default class App extends Component
 {
@@ -17,8 +18,9 @@ export default class App extends Component
     {
         return (
             <Provider store={store}>
-                <ComposedCounter name='Counter' />
+                {/* <ComposedCounter name='Counter' /> */}
                 {/* <DocumentSigner /> */}
+                <OnBoarding></OnBoarding>
             </Provider>
         )
     }

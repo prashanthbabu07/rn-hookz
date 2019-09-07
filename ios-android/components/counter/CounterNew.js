@@ -17,7 +17,7 @@ import
     TouchableOpacity
 } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement, incrementAsync } from '../../reducers/actions/Counter';
+import { increment, decrement, incrementAsync, generateKeyPair } from '../../reducers/actions/Counter';
 import { toggle } from '../../reducers/actions/Signed';
 import { Counter as Temps } from './Counter';
 
@@ -70,7 +70,7 @@ const CounterNew = () =>
             </Button>
             <Button
                 title="Key" style={styles.counter}
-                onPress={() => dispatch(incrementAsync())}>
+                onPress={() => dispatch(generateKeyPair())}>
             </Button>
         </View>
     )
