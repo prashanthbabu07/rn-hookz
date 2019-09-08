@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     mainTitle: {
         fontSize: 40,
         fontWeight: 'bold',
-        color: 'steelblue'
+        color: 'royalblue'
     },
     subTitle: {
         fontSize: 16,
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
         marginBottom: 36,
         justifyContent: 'center',
         borderRadius: 10,
-        backgroundColor: 'steelblue'
+        backgroundColor: 'royalblue'
     },
     text: {
         fontWeight: 'bold',
