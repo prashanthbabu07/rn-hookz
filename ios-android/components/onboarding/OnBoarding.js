@@ -25,4 +25,4 @@ const OnBoardingNavigation = createStackNavigator({
     // headerMode: 'none'
 });
 
-export default createAppContainer(OnBoardingNavigation);
+export default OnBoardingNavigation;

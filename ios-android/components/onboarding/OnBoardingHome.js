@@ -23,7 +23,7 @@ const OnBoardingHome = (props) =>
             <View style={styles.bottom}>
                 <TouchableOpacity
                     style={styles.button}
-                    onPress={() => props.navigation.navigate('Registration')}
+                    onPress={() => props.navigation.navigate("Registration")}
                 >
                     <Text style={styles.text}>Next</Text>
                 </TouchableOpacity>

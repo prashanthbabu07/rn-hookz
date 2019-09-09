@@ -4,102 +4,72 @@
  */
 
 import React, { Component, useEffect } from 'react';
-import ComposedCounter from './components/counter/ComposedCounter';
-import { createStore, applyMiddleware } from 'redux';
 import { Provider, useSelector, useDispatch } from 'react-redux';
 import store from './reducers';
-import DocumentSigner from './experiments/webviews/DocumentSigner';
-import OnBoardingNavigation from './components/onboarding/OnBoarding';
 import { View, Text, ActivityIndicator, StyleSheet } from 'react-native';
-import { getUserOnboardingState } from './reducers/actions/UserOnboarding';
-import
-{
-    createAppContainer,
-    createStackNavigator,
-    createSwitchNavigator,
-} from 'react-navigation';
-import OnBoardingHome from './components/onboarding/OnBoardingHome';
-
-
-
-const Loading = (props) => 
-{
-
-    const onboardingState = useSelector(state => state.onboarding);
-    const dispatcher = useDispatch();
-    useEffect(() => 
-    {
-        dispatcher(getUserOnboardingState());
-    });
-
-    return (<View>
-        <ActivityIndicator></ActivityIndicator>
-    </View>);
-}
-
-const Initilizing = createStackNavigator({
-    Loading: Loading
-});
-
-const Home = createStackNavigator({
-    Settings: ComposedCounter
-});
-
-const AppNavigator = createSwitchNavigator({
-    Loading: Loading,
-    Home: ComposedCounter,
-    Onboarding: OnBoardingNavigation
-}, {
-    initialRouteName: "Loading"
-});
-
-
-const Main = () =>
-{
-    const onboardingState = useSelector(state => state.onboarding);
-    const dispatcher = useDispatch();
-    useEffect(() => 
-    {
-        dispatcher(getUserOnboardingState());
-    });
-
-    if (onboardingState.isLoading)
-    {
-        return (
-            createAppContainer(Initilizing)
-        );
-    }
-
-    if (onboardingState.isOnboarded)
-    {
-        return (createAppContainer(Home))
-    }
-
-    return (<OnBoardingNavigation></OnBoardingNavigation>);
-}
+import AppNavigator from './navigations/AppNavigator';
+import { createStackNavigator, createSwitchNavigator, createAppContainer } from "react-navigation";
+import { Button } from 'react-native-elements';
 
 const App = () => 
 {
     return (
         <Provider store={store}>
-            {/* <View style={styles.container}>
-                <ActivityIndicator size="large" color="royalblue"></ActivityIndicator>
-            </View> */}
-            <OnBoardingHome></OnBoardingHome>
+            <AppNavigator />
         </Provider>
     );
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center'
-    },
-    horizontal: {
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        padding: 10
-    }
-})
+// export default class App extends React.Component
+// {
+//     render()
+//     {
+//         return <AppContainer />;
+//     }
+// }
+
+// const HomeScreen = () =>
+// {
+//     return (
+//         <View>
+//             <Text>HomeScreen</Text>
+//         </View>
+//     );
+// }
+
+// const SignInScreen = (props) =>
+// {
+//     return (
+//         <View>
+//             <Text>SignInScreen</Text>
+//             <Button title="forgot" onPress={() => props.navigation.navigate("ForgotPassword")}></Button>
+//         </View>
+//     );
+// }
+
+// const ForgotPasswordScreen = () =>
+// {
+//     return (
+//         <View>
+//             <Text>ForgotPasswordScreen</Text>
+//         </View>
+//     );
+// }
+
+// const AuthenticationNavigator = createStackNavigator({
+//     SignIn: SignInScreen,
+//     ForgotPassword: ForgotPasswordScreen,
+// });
+
+// const AppNavigator = createSwitchNavigator({
+//     /*
+//      * Rather than being rendered by a screen component, the
+//      * AuthenticationNavigator is a screen component
+//      */
+//     Auth: AuthenticationNavigator,
+//     Home: HomeScreen,
+// });
+
+// const AppContainer = createAppContainer(AppNavigator);
 
 export default App;

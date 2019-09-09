@@ -7,13 +7,12 @@ import
     TouchableOpacity
 } from 'react-native';
 import { Button } from 'react-native-elements';
-import userDefault from '../../services/sqlite/UserDefault';
 
 const OnBoardingRegistration = () => 
 {
     return (
         <View style={styles.container}>
-            <Text>Place holder for input box {userDefault.get('SIGNED_UP')}</Text>
+            <Text>Place holder for input box</Text>
         </View>
     );
 }
