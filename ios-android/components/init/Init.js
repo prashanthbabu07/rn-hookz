@@ -8,14 +8,11 @@ import userDefault from "../../services/sqlite/UserDefault";
 
 const Init = (props) => 
 {
-    const getOnboardingState = () =>
+    const getOnboardingState = async () =>
     {
-        userDefault.get(USER_ONBOARDED)
-            .then(value =>
-            {
-                let onboardedState = value == undefined ? false : value == "true";
-                props.navigation.navigate(onboardedState ? "home" : "onboarding");
-            });
+        const result = await userDefault.get(USER_ONBOARDED);
+        let onboardedState = result == undefined ? false : result == "true";
+        props.navigation.navigate(onboardedState ? "home" : "onboarding");
     }
 
     useEffect(() =>
