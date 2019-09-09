@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 import
 {
     View,
     Text,
     StyleSheet,
     TouchableOpacity
-} from 'react-native';
-import { Button } from 'react-native-elements';
+} from "react-native";
+import { Button } from "react-native-elements";
 
 const OnBoardingHome = (props) => 
 {
@@ -14,8 +14,8 @@ const OnBoardingHome = (props) =>
         <View style={styles.container}>
             <View style={{
                 flex: 1,
-                justifyContent: 'flex-end',
-                alignItems: 'center'
+                justifyContent: "flex-end",
+                alignItems: "center"
             }}>
                 <Text style={styles.mainTitle}>Hookz</Text>
                 <Text style={styles.subTitle}>a unified end-to-end encrypted collaboration platform.</Text>
@@ -36,37 +36,37 @@ const OnBoardingHome = (props) =>
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
+        justifyContent: "center",
+        alignItems: "center",
     },
     mainTitle: {
         fontSize: 40,
-        fontWeight: 'bold',
-        color: 'royalblue'
+        fontWeight: "bold",
+        color: "royalblue"
     },
     subTitle: {
         fontSize: 16,
         padding: 20,
-        textAlign: 'center'
-        // color: 'darkslategrey'
+        textAlign: "center"
+        // color: "darkslategrey"
     },
     bottom: {
         flex: 1,
-        justifyContent: 'flex-end',
-        width: '80%'
+        justifyContent: "flex-end",
+        width: "80%"
     },
     button: {
         height: 50,
         marginBottom: 36,
-        justifyContent: 'center',
+        justifyContent: "center",
         borderRadius: 10,
-        backgroundColor: 'royalblue'
+        backgroundColor: "royalblue"
     },
     text: {
-        fontWeight: 'bold',
+        fontWeight: "bold",
         fontSize: 20,
-        textAlign: 'center',
-        color: 'white'
+        textAlign: "center",
+        color: "white"
     }
 });
 

@@ -1,0 +1,1 @@
+export const USER_ONBOARDED = "USER_ONBOARDED";

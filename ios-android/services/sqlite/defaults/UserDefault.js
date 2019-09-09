@@ -1,5 +1,5 @@
 import SQLite from 'react-native-sqlite-storage';
-import SQLiteDatabase from './SQLiteServices';
+import SQLiteDatabase from '../SQLiteServices';
 
 const UserDefault = () =>
 {

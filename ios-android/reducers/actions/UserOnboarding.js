@@ -1,8 +1,8 @@
-import userDefault from "../../services/sqlite/UserDefault";
+import userDefault from "../../services/sqlite/defaults/UserDefault";
+import { USER_ONBOARDED } from "../../services/sqlite/defaults/keys";
 
 export const GET_USER_ONBOARDING_STATE = "GET_USER_ONBOARDING_STATE";
 export const SET_USER_ONBOARDING_STATE = "SET_USER_ONBOARDING_STATE"
-export const USER_ONBOARDED = "USER_ONBOARDED"
 
 export function setUserOnboardedState(value)
 {
