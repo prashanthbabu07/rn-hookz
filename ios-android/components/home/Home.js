@@ -7,7 +7,7 @@ const Home = (props) =>
     return (
         <View>
             <Text>Home</Text>
-            <Button onPress={() => props.navigation.navigate("OnBoardingHome")}></Button>
+            <Button title="Onboarding" onPress={() => props.navigation.navigate("onboarding")}></Button>
         </View>
     );
 }
