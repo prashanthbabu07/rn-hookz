@@ -11,13 +11,16 @@ const Init = (props) =>
     const getOnboardingState = async () =>
     {
         const result = await userDefault.get(USER_ONBOARDED);
-        let onboardedState = result == undefined ? false : result == "true";
-        props.navigation.navigate(onboardedState ? "home" : "onboarding");
+        let userOnboarded = result == undefined ? false : result == "true";
+        props.navigation.navigate(userOnboarded ? "home" : "onboarding");
     }
 
     useEffect(() =>
     {
-        getOnboardingState();
+        setTimeout(() =>
+        {
+            getOnboardingState();
+        }, 2000);
     });
 
     return (

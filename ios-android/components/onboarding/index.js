@@ -5,8 +5,8 @@ import
     createAppContainer,
     createStackNavigator,
 } from "react-navigation";
-import OnBoardingHome from "./OnBoardingHome";
-import OnBoardingRegistration from "./OnBoardingRegistration";
+import OnBoardingHome from "./OnboardingHome";
+import OnBoardingRegistration from "./OnboardingRegistration";
 
 const OnBoardingNavigation = createStackNavigator({
     Home: {

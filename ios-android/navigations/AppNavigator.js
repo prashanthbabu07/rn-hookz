@@ -1,6 +1,6 @@
 import { createSwitchNavigator, createAppContainer, createStackNavigator } from "react-navigation";
 import Init from "../components/init/Init";
-import OnBoarding from "../components/onboarding/OnBoarding";
+import OnBoarding from "../components/onboarding";
 import Home from "../components/home/Home";
 import React from "react";
 

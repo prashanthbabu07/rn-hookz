@@ -16,7 +16,7 @@ const OnBoardingRegistration = (props) =>
     const register = async () =>
     {
         const result = await userDefault.set(USER_ONBOARDED, "true");
-        props.navigation.navigator("home");
+        props.navigation.navigate("home");
     }
 
     return (
