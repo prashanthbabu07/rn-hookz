@@ -6,7 +6,7 @@
  * @flow
  */
 
-import React, { Fragment } from 'react';
+import React, { Fragment } from "react";
 import
 {
     SafeAreaView,
@@ -15,8 +15,8 @@ import
     View,
     Text,
     StatusBar,
-} from 'react-native';
-
+} from "react-native";
+import { Button } from "react-native-elements";
 import
 {
     Header,
@@ -24,15 +24,16 @@ import
     Colors,
     DebugInstructions,
     ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-import HeaderScrollView from 'react-native-header-scroll-view';
+} from "react-native/Libraries/NewAppScreen";
+import HeaderScrollView from "react-native-header-scroll-view";
+import { ONBOARDING_MAIN_ROUTE } from "../../constants/RouteNames";
 
-const Home = () =>
+const Home = ({ navigation }) =>
 {
     return (
         <Fragment>
             <StatusBar barStyle="dark-content" />
-            {/* <SafeAreaView> */}
+            <SafeAreaView>
                 <ScrollView
                     contentInsetAdjustmentBehavior="automatic"
                     style={styles.scrollView}>
@@ -68,10 +69,17 @@ const Home = () =>
                                 Read the docs to discover what to do next:
                             </Text>
                         </View>
+                        <View style={styles.sectionContainer}>
+                            <Text style={styles.sectionTitle}>Goto Onboarding</Text>
+                            <Text style={styles.sectionDescription}>
+                                Read the docs to discover what to do next:
+                            </Text>
+                            <Button title="Onboarding" onPress={() => navigation.navigate(ONBOARDING_MAIN_ROUTE)}></Button>
+                        </View>
                         <LearnMoreLinks />
                     </View>
                 </ScrollView>
-            {/* </SafeAreaView> */}
+            </SafeAreaView>
         </Fragment>
     );
 };
@@ -81,7 +89,7 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.lighter,
     },
     engine: {
-        position: 'absolute',
+        position: "absolute",
         right: 0,
     },
     body: {
@@ -93,25 +101,25 @@ const styles = StyleSheet.create({
     },
     sectionTitle: {
         fontSize: 24,
-        fontWeight: '600',
+        fontWeight: "600",
         color: Colors.black,
     },
     sectionDescription: {
         marginTop: 8,
         fontSize: 18,
-        fontWeight: '400',
+        fontWeight: "400",
         color: Colors.dark,
     },
     highlight: {
-        fontWeight: '700',
+        fontWeight: "700",
     },
     footer: {
         color: Colors.dark,
         fontSize: 12,
-        fontWeight: '600',
+        fontWeight: "600",
         padding: 4,
         paddingRight: 12,
-        textAlign: 'right',
+        textAlign: "right",
     },
 });
 

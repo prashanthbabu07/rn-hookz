@@ -7,7 +7,7 @@ import
     TouchableOpacity
 } from "react-native";
 import { Button } from "react-native-elements";
-import { ONBOARDING_SIGNUP } from "../../constants/RouteNames";
+import { ONBOARDING_SIGNUP_ROUTE } from "../../constants/RouteNames";
 
 const OnBoardingHome = ({ navigation }) => 
 {
@@ -25,7 +25,7 @@ const OnBoardingHome = ({ navigation }) =>
                 <Button
                     title="Next"
                     style={styles.button}
-                    onPress={() => navigation.navigate(ONBOARDING_SIGNUP)}
+                    onPress={() => navigation.navigate(ONBOARDING_SIGNUP_ROUTE)}
                 >
                 </Button>
             </View>

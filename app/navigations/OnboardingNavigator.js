@@ -7,11 +7,11 @@ import
 } from "react-navigation";
 import OnBoardingHome from "../views/onboarding/OnboardingHome";
 import OnBoardingRegistration from "../views/onboarding/OnboardingRegistration";
-import { ONBOARDING_HOME, ONBOARDING_SIGNUP } from "../constants/RouteNames";
+import { ONBOARDING_HOME_ROUTE, ONBOARDING_SIGNUP_ROUTE } from "../constants/RouteNames";
 
 let routerConfig = {};
 
-routerConfig[ONBOARDING_HOME] = {
+routerConfig[ONBOARDING_HOME_ROUTE] = {
     screen: OnBoardingHome,
     // headerMode: "none"
     navigationOptions: {
@@ -19,7 +19,7 @@ routerConfig[ONBOARDING_HOME] = {
     }
 };
 
-routerConfig[ONBOARDING_SIGNUP] = {
+routerConfig[ONBOARDING_SIGNUP_ROUTE] = {
     screen: OnBoardingRegistration,
     // headerMode: "none"
     // headerMode: Platform.OS == "ios" ? "float" : "none"
