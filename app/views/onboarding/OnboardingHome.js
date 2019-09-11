@@ -9,7 +9,7 @@ import
 import { Button } from "react-native-elements";
 import { ONBOARDING_SIGNUP } from "../../constants/RouteNames";
 
-const OnBoardingHome = (props) => 
+const OnBoardingHome = ({ navigation }) => 
 {
     return (
         <View style={styles.container}>
@@ -25,7 +25,7 @@ const OnBoardingHome = (props) =>
                 <Button
                     title="Next"
                     style={styles.button}
-                    onPress={() => props.navigation.navigate(ONBOARDING_SIGNUP)}
+                    onPress={() => navigation.navigate(ONBOARDING_SIGNUP)}
                 >
                 </Button>
             </View>

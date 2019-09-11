@@ -11,20 +11,20 @@ import userDefault from "../../services/sqlite/defaults/UserDefault";
 import { USER_ONBOARDED } from "../../services/sqlite/defaults/keys";
 import { APP_MAIN } from "../../constants/RouteNames";
 
-const OnBoardingRegistration = (props) => 
+const OnBoardingRegistration = ({ navigation }) => 
 {
 
     const register = async () =>
     {
         const result = await userDefault.set(USER_ONBOARDED, "true");
-        props.navigation.navigate(APP_MAIN);
+        navigation.navigate(APP_MAIN);
     }
 
     return (
         <View style={styles.container}>
             <Text>Place holder for input box</Text>
-            <Button 
-                title="Register" 
+            <Button
+                title="Register"
                 onPress={() => register()}
                 style={styles.button}></Button>
         </View >

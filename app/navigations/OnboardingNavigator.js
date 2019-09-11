@@ -5,11 +5,12 @@ import
     createAppContainer,
     createStackNavigator,
 } from "react-navigation";
-import OnBoardingHome from "./OnboardingHome";
-import OnBoardingRegistration from "./OnboardingRegistration";
-import { ONBOARDING_HOME, ONBOARDING_SIGNUP } from "../../constants/RouteNames";
+import OnBoardingHome from "../views/onboarding/OnboardingHome";
+import OnBoardingRegistration from "../views/onboarding/OnboardingRegistration";
+import { ONBOARDING_HOME, ONBOARDING_SIGNUP } from "../constants/RouteNames";
 
 let routerConfig = {};
+
 routerConfig[ONBOARDING_HOME] = {
     screen: OnBoardingHome,
     // headerMode: "none"
