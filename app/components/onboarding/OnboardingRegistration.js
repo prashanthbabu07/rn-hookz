@@ -9,6 +9,7 @@ import
 import { Button } from "react-native-elements";
 import userDefault from "../../services/sqlite/defaults/UserDefault";
 import { USER_ONBOARDED } from "../../services/sqlite/defaults/keys";
+import { APP_MAIN } from "../../constants/RouteNames";
 
 const OnBoardingRegistration = (props) => 
 {
@@ -16,7 +17,7 @@ const OnBoardingRegistration = (props) =>
     const register = async () =>
     {
         const result = await userDefault.set(USER_ONBOARDED, "true");
-        props.navigation.navigate("home");
+        props.navigation.navigate(APP_MAIN);
     }
 
     return (

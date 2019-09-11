@@ -1,6 +1,7 @@
 import { View, Text } from "react-native";
 import React from "react";
 import { Button } from "react-native-elements";
+import { ONBOARDING_MAIN } from "../../constants/RouteNames";
 
 const Home = (props) =>
 {
@@ -9,7 +10,7 @@ const Home = (props) =>
             <Text>Home</Text>
             <Button
                 title="Onboarding"
-                onPress={() => props.navigation.navigate("onboarding")}
+                onPress={() => props.navigation.navigate(ONBOARDING_MAIN)}
                 style={{
                     width: 200
                 }}></Button>

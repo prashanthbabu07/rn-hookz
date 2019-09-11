@@ -7,21 +7,24 @@ import
 } from "react-navigation";
 import OnBoardingHome from "./OnboardingHome";
 import OnBoardingRegistration from "./OnboardingRegistration";
+import { ONBOARDING_HOME, ONBOARDING_SIGNUP } from "../../constants/RouteNames";
 
-const OnBoardingNavigation = createStackNavigator({
-    Home: {
-        screen: OnBoardingHome,
-        // headerMode: "none"
-        navigationOptions: {
-            header: null
-        }
-    },
-    Registration: {
-        screen: OnBoardingRegistration,
-        // headerMode: "none"
-        // headerMode: Platform.OS == "ios" ? "float" : "none"
+let routerConfig = {};
+routerConfig[ONBOARDING_HOME] = {
+    screen: OnBoardingHome,
+    // headerMode: "none"
+    navigationOptions: {
+        header: null
     }
-}, {
+};
+
+routerConfig[ONBOARDING_SIGNUP] = {
+    screen: OnBoardingRegistration,
+    // headerMode: "none"
+    // headerMode: Platform.OS == "ios" ? "float" : "none"
+}
+
+const OnBoardingNavigation = createStackNavigator(routerConfig, {
     // headerMode: "none"
 });
 

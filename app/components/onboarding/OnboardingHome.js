@@ -7,6 +7,7 @@ import
     TouchableOpacity
 } from "react-native";
 import { Button } from "react-native-elements";
+import { ONBOARDING_SIGNUP } from "../../constants/RouteNames";
 
 const OnBoardingHome = (props) => 
 {
@@ -24,7 +25,7 @@ const OnBoardingHome = (props) =>
                 <Button
                     title="Next"
                     style={styles.button}
-                    onPress={() => props.navigation.navigate("Registration")}
+                    onPress={() => props.navigation.navigate(ONBOARDING_SIGNUP)}
                 >
                 </Button>
             </View>
@@ -54,15 +55,11 @@ const styles = StyleSheet.create({
         justifyContent: "flex-end",
         width: "80%",
         marginBottom: 36,
-        paddingBottom: 36
+        paddingBottom: 36,
+        alignItems: "center"
     },
     button: {
-        // height: 50,
-        // marginBottom: 36,
-        // justifyContent: "center",
-        // borderRadius: 10,
-        // backgroundColor: "royalblue",
-        // width: 300
+        width: 250,
     },
     text: {
         fontWeight: "bold",
