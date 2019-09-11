@@ -21,13 +21,12 @@ const OnBoardingHome = (props) =>
                 <Text style={styles.subTitle}>a unified end-to-end encrypted collaboration platform.</Text>
             </View>
             <View style={styles.bottom}>
-                <TouchableOpacity
+                <Button
+                    title="Next"
                     style={styles.button}
                     onPress={() => props.navigation.navigate("Registration")}
                 >
-                    <Text style={styles.text}>Next</Text>
-                </TouchableOpacity>
-                {/* <Button title="Next"></Button> */}
+                </Button>
             </View>
         </View>
     );
@@ -53,14 +52,17 @@ const styles = StyleSheet.create({
     bottom: {
         flex: 1,
         justifyContent: "flex-end",
-        width: "80%"
+        width: "80%",
+        marginBottom: 36,
+        paddingBottom: 36
     },
     button: {
-        height: 50,
-        marginBottom: 36,
-        justifyContent: "center",
-        borderRadius: 10,
-        backgroundColor: "royalblue"
+        // height: 50,
+        // marginBottom: 36,
+        // justifyContent: "center",
+        // borderRadius: 10,
+        // backgroundColor: "royalblue",
+        // width: 300
     },
     text: {
         fontWeight: "bold",

@@ -22,7 +22,10 @@ const OnBoardingRegistration = (props) =>
     return (
         <View style={styles.container}>
             <Text>Place holder for input box</Text>
-            <Button title="Register" onPress={() => register()}></Button>
+            <Button 
+                title="Register" 
+                onPress={() => register()}
+                style={styles.button}></Button>
         </View >
     );
 }
@@ -32,6 +35,9 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
+    },
+    button: {
+        width: 200
     }
 });
 

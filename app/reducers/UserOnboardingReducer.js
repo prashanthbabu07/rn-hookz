@@ -1,4 +1,4 @@
-import { TOGGLE, SET_USER_ONBOARDING_STATE, GET_USER_ONBOARDING_STATE } from './actions/UserOnboarding';
+import { TOGGLE, SET_USER_ONBOARDING_STATE, GET_USER_ONBOARDING_STATE } from '../actions/UserOnboarding';
 
 const userOnboardingState = {
     isLoading: true,

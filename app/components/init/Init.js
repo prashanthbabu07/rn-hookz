@@ -1,7 +1,7 @@
 import { View, ActivityIndicator, Button } from "react-native";
 import React, { useEffect } from "react";
 import { StyleSheet } from "react-native";
-import { getUserOnboardingState } from "../../reducers/actions/UserOnboarding";
+import { getUserOnboardingState } from "../../actions/UserOnboarding";
 import { useDispatch, useSelector } from "react-redux";
 import { USER_ONBOARDED } from "../../services/sqlite/defaults/keys";
 import userDefault from "../../services/sqlite/defaults/UserDefault";

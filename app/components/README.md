@@ -1,0 +1,1 @@
+These components should not manage state.

@@ -1,4 +1,4 @@
-const crashReporter = store => next => action =>
+const crashReporterMiddleware = store => next => action =>
 {
     try
     {
@@ -12,4 +12,4 @@ const crashReporter = store => next => action =>
     }
 }
 
-export default crashReporter;
+export default crashReporterMiddleware;

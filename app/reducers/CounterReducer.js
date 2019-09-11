@@ -1,4 +1,4 @@
-import { INCREMENT_COUNTER, DECREMENT_COUNTER } from './actions/Counter';
+import { INCREMENT_COUNTER, DECREMENT_COUNTER } from '../actions/Counter';
 
 
 const initialState = {
