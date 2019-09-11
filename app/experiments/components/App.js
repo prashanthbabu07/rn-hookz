@@ -12,7 +12,7 @@ import
     createStackNavigator,
 } from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import HomeIconWithBadge from './HomeIconWithBadge';
+import HomeIconWithBadge from '../../components/HomeIconWithBadge';
 import DefaultApp from './DefaultApp';
 import SQLite from 'react-native-sqlite-storage';
 //import { throwStatement } from '@babel/types';

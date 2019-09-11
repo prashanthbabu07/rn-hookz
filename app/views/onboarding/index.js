@@ -5,9 +5,9 @@ import
     createAppContainer,
     createStackNavigator,
 } from "react-navigation";
-import OnBoardingHome from "../views/onboarding/OnboardingHome";
-import OnBoardingRegistration from "../views/onboarding/OnboardingRegistration";
-import { ONBOARDING_HOME_ROUTE, ONBOARDING_SIGNUP_ROUTE } from "../constants/RouteNames";
+import OnBoardingHome from "./OnboardingHome";
+import OnBoardingRegistration from "./OnboardingRegistration";
+import { ONBOARDING_HOME_ROUTE, ONBOARDING_SIGNUP_ROUTE } from "../../constants/RouteNames";
 
 let routerConfig = {};
 
@@ -25,8 +25,8 @@ routerConfig[ONBOARDING_SIGNUP_ROUTE] = {
     // headerMode: Platform.OS == "ios" ? "float" : "none"
 }
 
-const OnBoardingNavigation = createStackNavigator(routerConfig, {
+const OnboardingStack = createStackNavigator(routerConfig, {
     // headerMode: "none"
 });
 
-export default OnBoardingNavigation;
+export default OnboardingStack;

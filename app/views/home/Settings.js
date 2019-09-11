@@ -13,22 +13,11 @@ import { HOME_ROUTE } from "../../constants/RouteNames";
 import AsyncStorage from "@react-native-community/async-storage";
 import { IS_USER_ONBOARDED } from "../../constants/UserDefaults";
 
-const OnBoardingRegistration = ({ navigation }) => 
+const Settings = () => 
 {
-
-    const register = async () =>
-    {
-        const result = await AsyncStorage.setItem(IS_USER_ONBOARDED, "true");
-        navigation.navigate(HOME_ROUTE);
-    }
-
     return (
         <View style={styles.container}>
-            <Text>Place holder for input box</Text>
-            <Button
-                title="Register"
-                onPress={() => register()}
-                style={styles.button}></Button>
+            <Text>Settings Screen</Text>
         </View >
     );
 }
@@ -38,10 +27,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-    },
-    button: {
-        width: 200
     }
 });
 
-export default OnBoardingRegistration;
+export default Settings;
