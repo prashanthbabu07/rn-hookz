@@ -1,42 +1,37 @@
-import React, { Component } from 'react';
-import { WebView } from 'react-native-webview';
-import { Platform } from 'react-native';
+import React, { Component } from "react";
+import { WebView } from "react-native-webview";
+import { Platform } from "react-native";
 
-const sourceUri = (
-    Platform.OS === 'android'
-        ? 'file:///android_asset/'
-        : ''
-) + 'Web.bundle/loader.html';
+const sourceUri = (Platform.OS === "android" ? "file:///android_asset/" : "") + "Web.bundle/loader.html";
 
-const params = 'platform=' + Platform.OS;
+const params = "platform=" + Platform.OS;
 
 const injectedJS = `
   if (!window.location.search) {
-    var link = document.getElementById('progress-bar');
-    link.href = './site/index.html?${params}';
+    var link = document.getElementById("progress-bar");
+    link.href = "./site/index.html?${params}";
     link.click();
-  }
-`;
+  }`;
 
 const DocumentSigner = () => 
 {
     let refWebView = null;
 
     // const run = `
-    //   document.body.style.backgroundColor = 'blue';
+    //   document.body.style.backgroundColor = "blue";
     //   true;
     // `;
 
     // const injectScript = () => 
     // {
-    //     //document.body.style.backgroundColor = 'blue';
+    //     //document.body.style.backgroundColor = "blue";
     //     window.ReactNativeWebView.postMessage(injectScript.toString());
     //     true;
     // }
 
     setTimeout(() =>
     {
-        // console.log('************', refWebView);
+        // console.log("************", refWebView);
         refWebView.postMessage("Hello from RN");
         // var script = "(" + injectScript.toString() + "());";
         // console.log(script);
@@ -55,7 +50,7 @@ const DocumentSigner = () =>
             injectedJavaScript={injectedJS}
             source={{ uri: sourceUri }}
             javaScriptEnabled={true}
-            originWhitelist={['*']}
+            originWhitelist={["*"]}
             allowFileAccess={true}
             onMessage={event =>
             {
@@ -64,11 +59,11 @@ const DocumentSigner = () =>
         />
 
         // <WebView
-        //     // source={{ uri: 'https://www.chilzin.com' }}
+        //     // source={{ uri: "https://www.chilzin.com" }}
         //     source={{
-        //         html: require('./Document.js')()
+        //         html: require("./Document.js")()
         //     }}
-        //     originWhitelist={['*']}
+        //     originWhitelist={["*"]}
         //     style={{ marginTop: 50 }}
         //     ref={ref => (refWebView = ref)}
         //     onMessage={event =>
