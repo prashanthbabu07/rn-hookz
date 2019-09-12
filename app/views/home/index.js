@@ -1,6 +1,6 @@
 import React from "react";
 import { createBottomTabNavigator, createStackNavigator } from "react-navigation";
-import { SETTINGS_ROUTE, CONTACTS_ROUTE, MESSAGES_ROUTE } from "../../constants/RouteNames";
+import { ROUTE_SETTINGS, ROUTE_CONTACTS, ROUTE_MESSAGES, ROUTE_HOME_TAB, ROUTE_CONVERSATION } from "../../constants/RouteNames";
 import Settings from "./Settings";
 import Contacts from "./Contacts";
 import Messages from "./Messages";
@@ -8,37 +8,39 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import HomeIconWithBadge from "../../components/HomeIconWithBadge";
 import Conversation from "./Conversation";
 
-let routeConfig = {};
+let routeHomeTabConfig = {};
 
-routeConfig[SETTINGS_ROUTE] = {
+routeHomeTabConfig[ROUTE_SETTINGS] = {
     screen: Settings,
     navigationOptions: {
         title: "Settings"
     }
 }
 
-routeConfig[CONTACTS_ROUTE] = {
+routeHomeTabConfig[ROUTE_CONTACTS] = {
     screen: Contacts,
     navigationOptions: {
         title: "Contacts"
     }
 }
 
-routeConfig[MESSAGES_ROUTE] = {
+routeHomeTabConfig[ROUTE_MESSAGES] = {
     screen: Messages,
     navigationOptions: {
         title: "Messages"
     }
 }
 
-const tabNavigator = createBottomTabNavigator(routeConfig, {
+
+
+const tabNavigator = createBottomTabNavigator(routeHomeTabConfig, {
     defaultNavigationOptions: ({ navigation }) => ({
         tabBarIcon: ({ focused, horizontal, tintColor }) =>
         {
             const { routeName } = navigation.state;
             let IconComponent = Ionicons;
             let iconName;
-            if (routeName === CONTACTS_ROUTE)
+            if (routeName === ROUTE_CONTACTS)
             {
                 //iconName = `ios-information-circle${focused ? "" : "-outline"}`;
                 iconName = "ios-contacts";
@@ -46,11 +48,11 @@ const tabNavigator = createBottomTabNavigator(routeConfig, {
                 // You can check the implementation below.
                 IconComponent = HomeIconWithBadge;
             }
-            else if (routeName === SETTINGS_ROUTE)
+            else if (routeName === ROUTE_SETTINGS)
             {
                 iconName = `ios-options`;
             }
-            else if (routeName === MESSAGES_ROUTE)
+            else if (routeName === ROUTE_MESSAGES)
             {
                 iconName = `ios-time`;
             }
@@ -63,31 +65,35 @@ const tabNavigator = createBottomTabNavigator(routeConfig, {
         activeTintColor: "#007AFF",
         inactiveTintColor: "gray",
     },
-    initialRouteName: CONTACTS_ROUTE
+    initialRouteName: ROUTE_CONTACTS
 });
 
 
-const mainStack = createStackNavigator({
-    HOME_MAIN_TAB: {
-        screen: tabNavigator,
-        // navigationOptions: ({ navigation }) =>
-        // {
+let routeHomeStackConfig = {};
+routeHomeStackConfig[ROUTE_HOME_TAB] = {
+    screen: tabNavigator,
+    // navigationOptions: ({ navigation }) =>
+    // {
 
-        //     const navRoute = getCurrentRoute(navigation.state);
-        //     console.log(navRoute.key)
+    //     const navRoute = getCurrentRoute(navigation.state);
+    //     console.log(navRoute.key)
 
-        //     return {
-        //         title: navRoute.key || "Hookz",
-        //         headerRight: (
-        //             <View style={styles.iconContainer}>
-        //                 <Ionicons name="ios-options" size={25} />
-        //                 <Ionicons name="ios-options" size={25} />
-        //             </View>
-        //         )
-        //     };
-        // }
-    },
-    CONVERSATION_ROUTE: Conversation
-});
+    //     return {
+    //         title: navRoute.key || "Hookz",
+    //         headerRight: (
+    //             <View style={styles.iconContainer}>
+    //                 <Ionicons name="ios-options" size={25} />
+    //                 <Ionicons name="ios-options" size={25} />
+    //             </View>
+    //         )
+    //     };
+    // }
+};
 
-export default mainStack;
+routeHomeStackConfig[ROUTE_CONVERSATION] = {
+    screen: Conversation
+}
+
+const homeStacks = createStackNavigator(routeHomeStackConfig);
+
+export default homeStacks;

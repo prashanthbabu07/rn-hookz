@@ -1,17 +1,17 @@
 import { ethers } from 'ethers';
-import { INCREMENT_COUNTER, DECREMENT_COUNTER } from '../constants/CounterActionTypes';
+import { AX_INCREMENT_COUNTER, AX_DECREMENT_COUNTER } from '../constants/CounterActionTypes';
 
 export function increment()
 {
     return {
-        type: INCREMENT_COUNTER
+        type: AX_INCREMENT_COUNTER
     };
 }
 
 export function decrement()
 {
     return {
-        type: DECREMENT_COUNTER
+        type: AX_DECREMENT_COUNTER
     };
 }
 
@@ -30,6 +30,6 @@ export function generateKeyPair()
 {
     return async dispatch => 
     {
-        
+
     };
 }

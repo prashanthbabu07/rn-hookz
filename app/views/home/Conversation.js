@@ -10,7 +10,7 @@ const Conversation = () =>
 {
     return (
         <View style={styles.container}>
-            <Text>List of contacts</Text>
+            <Text>Conversations</Text>
         </View >
     );
 }

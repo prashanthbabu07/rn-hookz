@@ -9,17 +9,17 @@ import
 import { Button } from "react-native-elements";
 import userDefault from "../../services/sqlite/defaults/UserDefault";
 import { USER_ONBOARDED } from "../../services/sqlite/defaults/keys";
-import { HOME_ROUTE } from "../../constants/RouteNames";
+import { ROUTE_HOME_STACK } from "../../constants/RouteNames";
 import AsyncStorage from "@react-native-community/async-storage";
-import { IS_USER_ONBOARDED } from "../../constants/UserDefaults";
+import { KV_IS_USER_ONBOARDED } from "../../constants/UserDefaults";
 
 const OnBoardingRegistration = ({ navigation }) => 
 {
 
     const register = async () =>
     {
-        const result = await AsyncStorage.setItem(IS_USER_ONBOARDED, "true");
-        navigation.navigate(HOME_ROUTE);
+        const result = await AsyncStorage.setItem(KV_IS_USER_ONBOARDED, "true");
+        navigation.navigate(ROUTE_HOME_STACK);
     }
 
     return (

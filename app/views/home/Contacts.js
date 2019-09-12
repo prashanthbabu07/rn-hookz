@@ -6,14 +6,14 @@ import
     StyleSheet,
 } from "react-native";
 import { Button } from "react-native-elements";
-import { CONVERSATION_ROUTE } from "../../constants/RouteNames";
+import { ROUTE_CONVERSATION } from "../../constants/RouteNames";
 
 const Contacts = ({ navigation }) => 
 {
     return (
         <View style={styles.container}>
             <Text>List of contacts</Text>
-            <Button title="Conversation" onPress={() => navigation.navigate(CONVERSATION_ROUTE)}></Button>
+            <Button title="Conversation" onPress={() => navigation.navigate(ROUTE_CONVERSATION)}></Button>
         </View >
     );
 }

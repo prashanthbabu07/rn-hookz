@@ -26,7 +26,7 @@ import
     ReloadInstructions,
 } from "react-native/Libraries/NewAppScreen";
 import HeaderScrollView from "react-native-header-scroll-view";
-import { ONBOARDING_MAIN_ROUTE } from "../../constants/RouteNames";
+import { ROUTE_ONBOARDING_MAIN } from "../../constants/RouteNames";
 
 const Home = ({ navigation }) =>
 {
@@ -74,7 +74,7 @@ const Home = ({ navigation }) =>
                             <Text style={styles.sectionDescription}>
                                 Read the docs to discover what to do next:
                             </Text>
-                            <Button title="Onboarding" onPress={() => navigation.navigate(ONBOARDING_MAIN_ROUTE)}></Button>
+                            <Button title="Onboarding" onPress={() => navigation.navigate(ROUTE_ONBOARDING_MAIN)}></Button>
                         </View>
                         <LearnMoreLinks />
                     </View>

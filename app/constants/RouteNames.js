@@ -1,14 +1,17 @@
+/****/
+/********/export const ROUTE_INIT = "ROUTE_INIT";
 
-export const INIT_ROUTE = "INIT_ROUTE";
+/********/export const ROUTE_ONBOARDING_STACK = "ROUTE_ONBOARDING_MAIN";
+/************/export const ROUTE_ONBOARDING_HOME = "ROUTE_ONBOARDING_HOME";
+/************/export const ROUTE_ONBOARDING_SIGNUP = "ROUTE_ONBOARDING_SIGNUP";
 
-export const ONBOARDING_MAIN_ROUTE = "ONBOARDING_MAIN_ROUTE";
-export const ONBOARDING_HOME_ROUTE = "ONBOARDING_HOME_ROUTE";
-export const ONBOARDING_SIGNUP_ROUTE = "ONBOARDING_SIGNUP_ROUTE";
+/********/export const ROUTE_HOME_STACK = "ROUTE_HOME";
+/************/export const ROUTE_HOME_TAB = "ROUTE_HOME_TAB";
+/****************/export const ROUTE_SETTINGS = "ROUTE_SETTINGS";
+/****************/export const ROUTE_CONTACTS = "ROUTE_CONTACTS";
+/****************/export const ROUTE_MESSAGES = "ROUTE_MESSAGES";
 
-export const HOME_ROUTE = "APP_MAIN_ROUTE";
-
-export const SETTINGS_ROUTE = "SETTINGS_ROUTE";
-export const CONTACTS_ROUTE = "CONTACTS_ROUTE";
-export const MESSAGES_ROUTE = "MESSAGES_ROUTE";
-export const CONVERSATION_ROUTE = "CONVERSATION_ROUTE";
-
+/************/export const ROUTE_CONVERSATION = "ROUTE_CONVERSATION";
+/****************/export const ROUTE_FILES = "ROUTE_FILES";
+/****************/export const ROUTE_AGREEMENTS = "ROUTE_AGREEMENTS";
+/****************/export const ROUTE_PLANNERS = "ROUTE_PLANNERS";

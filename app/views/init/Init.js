@@ -5,15 +5,15 @@ import { StyleSheet } from "react-native";
 import { getUserOnboardingState } from "../../actions/UserOnboarding";
 import { useDispatch, useSelector } from "react-redux";
 import userDefault from "../../services/sqlite/defaults/UserDefault";
-import { HOME_ROUTE, ONBOARDING_MAIN_ROUTE } from "../../constants/RouteNames";
-import { IS_USER_ONBOARDED } from "../../constants/UserDefaults";
+import { ROUTE_HOME_STACK, ROUTE_ONBOARDING_STACK } from "../../constants/RouteNames";
+import { KV_IS_USER_ONBOARDED } from "../../constants/UserDefaults";
 
 const Init = ({ navigation }) => 
 {
     const getOnboardingState = async () =>
     {
-        const value = await AsyncStorage.getItem(IS_USER_ONBOARDED);
-        navigation.navigate(value == "true" ? HOME_ROUTE : ONBOARDING_MAIN_ROUTE);
+        const value = await AsyncStorage.getItem(KV_IS_USER_ONBOARDED);
+        navigation.navigate(value == "true" ? ROUTE_HOME_STACK : ROUTE_ONBOARDING_STACK);
     }
 
     useEffect(() =>

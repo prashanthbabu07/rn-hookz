@@ -3,16 +3,16 @@ import Init from "../views/init/Init";
 import OnboardingStack from "../views/onboarding";
 import Home from "../views/home";
 import React from "react";
-import { INIT_ROUTE, ONBOARDING_MAIN_ROUTE, HOME_ROUTE } from "../constants/RouteNames";
+import { ROUTE_INIT, ROUTE_ONBOARDING_STACK, ROUTE_HOME_STACK } from "../constants/RouteNames";
 
 
 let routerConfig = {};
 
-routerConfig[INIT_ROUTE] = Init;
+routerConfig[ROUTE_INIT] = Init;
 
-routerConfig[ONBOARDING_MAIN_ROUTE] = OnboardingStack;
+routerConfig[ROUTE_ONBOARDING_STACK] = OnboardingStack;
 
-routerConfig[HOME_ROUTE] = Home;
+routerConfig[ROUTE_HOME_STACK] = Home;
 
 // createStackNavigator({
 //     home: {
@@ -25,4 +25,4 @@ routerConfig[HOME_ROUTE] = Home;
 
 const AppNavigator = createSwitchNavigator(routerConfig);
 
-export default createAppContainer(AppNavigator, { initialRouteName: INIT_ROUTE });
+export default createAppContainer(AppNavigator, { initialRouteName: ROUTE_INIT });
