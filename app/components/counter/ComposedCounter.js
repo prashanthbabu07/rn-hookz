@@ -6,7 +6,7 @@
 import React, {
     Component,
     useState
-} from 'react';
+} from "react";
 import
 {
     View,
@@ -14,17 +14,17 @@ import
     Button,
     StyleSheet,
     TouchableOpacity
-} from 'react-native';
-import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement, incrementAsync } from "../../actions/Counter";
-import { toggle } from '../../reducers/actions/UserOnboarding';
-import CounterNew from './CounterNew';
+} from "react-native";
+import { useSelector, useDispatch } from "react-redux";
+// import { increment, decrement, incrementAsync } from "../../actions/Counter";
+import { toggle } from "../../actions/UserOnboarding";
+import CounterNew from "./CounterNew";
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center'
+        alignItems: "center",
+        justifyContent: "center"
     },
     counter: {
         fontSize: 20
@@ -44,17 +44,17 @@ const ComposedCounter = (props) =>
     const signed = useSelector(state => state.signed);
     const dispatch = useDispatch();
 
-    console.log('********', props);
+    console.log("********", props);
 
     return (
         <View style={styles.container}>
             {signed ? <CounterNew></CounterNew> : <View></View>}
 
             <Button
-                title={signed ? 'Hide' : 'Show'}
+                title={signed ? "Hide" : "Show"}
                 onPress={() => dispatch(toggle())}>
             </Button>
-        </View >
+        </View>
     );
 
     // return (
@@ -67,7 +67,7 @@ const ComposedCounter = (props) =>
     //         <Counter />
     //         // <View>
     //         //     <Button
-    //         //         title={signed ? 'Hide' : 'Show'}
+    //         //         title={signed ? "Hide" : "Show"}
     //         //         onPress={() => dispatch(toggle())}>
     //         //     </Button>
     //         // </View>

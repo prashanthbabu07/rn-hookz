@@ -1,3 +1,8 @@
+/**
+ * @format
+ * @flow
+ */
+
 import React from "react";
 import
 {
@@ -13,7 +18,11 @@ import { ROUTE_HOME_STACK } from "../../constants/RouteNames";
 import AsyncStorage from "@react-native-community/async-storage";
 import { KV_IS_USER_ONBOARDED } from "../../constants/UserDefaults";
 
-const OnBoardingRegistration = ({ navigation }) => 
+type Props = {
+    navigation: any
+}
+
+const OnBoardingRegistration = ({ navigation }: Props) => 
 {
 
     const register = async () =>

@@ -17,9 +17,9 @@ import
     TouchableOpacity
 } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement, incrementAsync, generateKeyPair } from '../../reducers/actions/Counter';
-import { toggle } from '../../reducers/actions/UserOnboarding';
-import { Counter as Temps } from './Counter';
+import { increment, decrement, incrementAsync, generateKeyPair } from '../../actions/Counter';
+// import { toggle } from '../../reducers/actions/UserOnboarding';
+// import { Counter as Temps } from './Counter';
 
 const styles = StyleSheet.create({
     container: {

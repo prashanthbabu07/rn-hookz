@@ -28,7 +28,11 @@ import
 import HeaderScrollView from "react-native-header-scroll-view";
 import { ROUTE_ONBOARDING_MAIN } from "../../constants/RouteNames";
 
-const Home = ({ navigation }) =>
+type Props = {
+    navigation: any
+};
+
+const Home = ({ navigation } : Props) =>
 {
     return (
         <Fragment>

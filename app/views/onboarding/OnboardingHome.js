@@ -1,3 +1,8 @@
+/**
+ * @format
+ * @flow
+ */
+
 import React from "react";
 import
 {
@@ -9,7 +14,11 @@ import
 import { Button } from "react-native-elements";
 import { ROUTE_ONBOARDING_SIGNUP } from "../../constants/RouteNames";
 
-const OnBoardingHome = ({ navigation }) => 
+type Props = {
+    navigation: any
+}
+
+const OnBoardingHome = ({ navigation }: Props) => 
 {
     return (
         <View style={styles.container}>
