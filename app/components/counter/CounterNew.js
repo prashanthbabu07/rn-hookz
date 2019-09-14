@@ -55,21 +55,17 @@ const CounterNew = () =>
 
     return (
         <View style={{ flexDirection: 'row', width: 300, justifyContent: 'space-around' }}>
-            <Button
-                title="+" style={styles.counter}
+            <Button title="+" style={styles.counter}
                 onPress={() => dispatch(increment())}>
             </Button>
             <Text style={styles.counter}>{counterState.counter}</Text>
-            <Button
-                title="-" style={styles.counter}
+            <Button title="-" style={styles.counter}
                 onPress={() => dispatch(decrement())}>
             </Button>
-            <Button
-                title="+Async" style={styles.counter}
+            <Button title="+Async" style={styles.counter}
                 onPress={() => dispatch(incrementAsync())}>
             </Button>
-            <Button
-                title="Key" style={styles.counter}
+            <Button title="Key" style={styles.counter}
                 onPress={() => dispatch(generateKeyPair())}>
             </Button>
         </View>
