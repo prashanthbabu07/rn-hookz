@@ -16,7 +16,7 @@ import
     TouchableOpacity
 } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement, incrementAsync } from '../../reducers/actions/Counter';
+import { increment, decrement, incrementAsync } from "../../actions/Counter";
 import { toggle } from '../../reducers/actions/UserOnboarding';
 import CounterNew from './CounterNew';
 
