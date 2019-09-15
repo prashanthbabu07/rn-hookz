@@ -17,7 +17,7 @@ import
 } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
 // import { increment, decrement, incrementAsync } from "../../actions/Counter";
-import { toggle } from "../../actions/UserOnboarding";
+// import { toggle } from "../../actions/UserOnboarding";
 import CounterNew from "./CounterNew";
 
 const styles = StyleSheet.create({
@@ -38,7 +38,7 @@ const Temp = () =>
     )
 }
 
-const ComposedCounter = (props) =>
+const ComposedCounter = (props: any) =>
 {
     //const counterState = useSelector(state => state.counter);
     const signed = useSelector(state => state.signed);
@@ -52,7 +52,8 @@ const ComposedCounter = (props) =>
 
             <Button
                 title={signed ? "Hide" : "Show"}
-                onPress={() => dispatch(toggle())}>
+            // onPress={() => dispatch(toggle())}
+            >
             </Button>
         </View>
     );

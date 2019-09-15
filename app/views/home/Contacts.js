@@ -1,3 +1,8 @@
+/**
+ * @format
+ * @flow
+ */
+
 import React from "react";
 import
 {
@@ -8,7 +13,11 @@ import
 import { Button } from "react-native-elements";
 import { ROUTE_CONVERSATION } from "../../constants/RouteNames";
 
-const Contacts = ({ navigation }) => 
+type Props = {
+    navigation: any
+};
+
+const Contacts = ({ navigation }: Props) => 
 {
     return (
         <View style={styles.container}>

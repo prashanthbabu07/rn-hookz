@@ -1,3 +1,8 @@
+/**
+ * @format
+ * @flow
+ */
+
 import { ethers } from 'ethers';
 import { AX_INCREMENT_COUNTER, AX_DECREMENT_COUNTER } from '../constants/CounterActionTypes';
 
@@ -15,9 +20,9 @@ export function decrement()
     };
 }
 
-export function incrementAsync(delay = 1000)
+export function incrementAsync(delay: number = 1000)
 {
-    return (dispatch) =>
+    return (dispatch: any) =>
     {
         setTimeout(() =>
         {
@@ -28,7 +33,7 @@ export function incrementAsync(delay = 1000)
 
 export function generateKeyPair()
 {
-    return async dispatch => 
+    return async (dispatch: any) => 
     {
 
     };

@@ -1,3 +1,8 @@
+/**
+ * @format
+ * @flow
+ */
+
 import React from "react";
 import { createBottomTabNavigator, createStackNavigator } from "react-navigation";
 import { ROUTE_SETTINGS, ROUTE_CONTACTS, ROUTE_MESSAGES, ROUTE_HOME_TAB, ROUTE_CONVERSATION } from "../../constants/RouteNames";
