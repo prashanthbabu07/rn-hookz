@@ -12,7 +12,7 @@ import
     TouchableOpacity
 } from "react-native";
 import { Button } from "react-native-elements";
-import { ROUTE_ONBOARDING_SIGNUP } from "../../constants/RouteNames";
+import { APP_ROUTE_NAMES } from "../../constants/RouteNames";
 
 type Props = {
     navigation: any
@@ -34,7 +34,7 @@ const OnBoardingHome = ({ navigation }: Props) =>
                 <Button
                     title="Next"
                     style={styles.button}
-                    onPress={() => navigation.navigate(ROUTE_ONBOARDING_SIGNUP)}
+                    onPress={() => navigation.navigate(APP_ROUTE_NAMES.onboarding.signup.name)}
                 >
                 </Button>
             </View>

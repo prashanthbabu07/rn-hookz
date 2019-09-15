@@ -5,7 +5,7 @@
 
 import React from "react";
 import { createBottomTabNavigator, createStackNavigator } from "react-navigation";
-import { ROUTE_SETTINGS, ROUTE_CONTACTS, ROUTE_MESSAGES, ROUTE_HOME_TAB, ROUTE_CONVERSATION } from "../../constants/RouteNames";
+import { APP_ROUTE_NAMES } from "../../constants/RouteNames";
 import Settings from "./Settings";
 import Contacts from "./Contacts";
 import Messages from "./Messages";
@@ -15,21 +15,21 @@ import Conversation from "./Conversation";
 
 let routeHomeTabConfig = {};
 
-routeHomeTabConfig[ROUTE_SETTINGS] = {
+routeHomeTabConfig[APP_ROUTE_NAMES.home.mainTab.settings.name] = {
     screen: Settings,
     navigationOptions: {
         title: "Settings"
     }
 }
 
-routeHomeTabConfig[ROUTE_CONTACTS] = {
+routeHomeTabConfig[APP_ROUTE_NAMES.home.mainTab.contacts.name] = {
     screen: Contacts,
     navigationOptions: {
         title: "Contacts"
     }
 }
 
-routeHomeTabConfig[ROUTE_MESSAGES] = {
+routeHomeTabConfig[APP_ROUTE_NAMES.home.mainTab.messages.name] = {
     screen: Messages,
     navigationOptions: {
         title: "Messages"
@@ -45,7 +45,7 @@ const tabNavigator = createBottomTabNavigator(routeHomeTabConfig, {
             const { routeName } = navigation.state;
             let IconComponent = Ionicons;
             let iconName;
-            if (routeName === ROUTE_CONTACTS)
+            if (routeName === APP_ROUTE_NAMES.home.mainTab.contacts.name)
             {
                 //iconName = `ios-information-circle${focused ? "" : "-outline"}`;
                 iconName = "ios-contacts";
@@ -53,11 +53,11 @@ const tabNavigator = createBottomTabNavigator(routeHomeTabConfig, {
                 // You can check the implementation below.
                 IconComponent = HomeIconWithBadge;
             }
-            else if (routeName === ROUTE_SETTINGS)
+            else if (routeName === APP_ROUTE_NAMES.home.mainTab.settings.name)
             {
                 iconName = `ios-options`;
             }
-            else if (routeName === ROUTE_MESSAGES)
+            else if (routeName === APP_ROUTE_NAMES.home.mainTab.messages.name)
             {
                 iconName = `ios-time`;
             }
@@ -70,12 +70,12 @@ const tabNavigator = createBottomTabNavigator(routeHomeTabConfig, {
         activeTintColor: "#007AFF",
         inactiveTintColor: "gray",
     },
-    initialRouteName: ROUTE_CONTACTS
+    initialRouteName: APP_ROUTE_NAMES.home.mainTab.contacts.name
 });
 
 
 let routeHomeStackConfig = {};
-routeHomeStackConfig[ROUTE_HOME_TAB] = {
+routeHomeStackConfig[APP_ROUTE_NAMES.home.mainTab.name] = {
     screen: tabNavigator,
     // navigationOptions: ({ navigation }) =>
     // {
@@ -95,7 +95,7 @@ routeHomeStackConfig[ROUTE_HOME_TAB] = {
     // }
 };
 
-routeHomeStackConfig[ROUTE_CONVERSATION] = {
+routeHomeStackConfig[APP_ROUTE_NAMES.home.conversation.name] = {
     screen: Conversation
 }
 

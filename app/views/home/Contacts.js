@@ -11,7 +11,7 @@ import
     StyleSheet,
 } from "react-native";
 import { Button } from "react-native-elements";
-import { ROUTE_CONVERSATION } from "../../constants/RouteNames";
+import { APP_ROUTE_NAMES } from "../../constants/RouteNames";
 
 type Props = {
     navigation: any
@@ -22,7 +22,7 @@ const Contacts = ({ navigation }: Props) =>
     return (
         <View style={styles.container}>
             <Text>List of contacts</Text>
-            <Button title="Conversation" onPress={() => navigation.navigate(ROUTE_CONVERSATION)}></Button>
+            <Button title="Conversation" onPress={() => navigation.navigate(APP_ROUTE_NAMES.home.conversation.name)}></Button>
         </View >
     );
 }
