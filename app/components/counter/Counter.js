@@ -37,7 +37,8 @@ const Counter = () =>
     //const dispatch = useDispatch();
 
     return (
-        <Text style={styles.counter}>{counterState.counter}</Text>
+        // <Text style={styles.counter}>{counterState.counter}</Text>
+        <Text style={styles.counter}>Test 0</Text>
     );
 
     // return (
