@@ -27,7 +27,7 @@ type Props = {
 const OnBoardingRegistration = ({ navigation }: Props) => 
 {
 
-    const [value, onChangeText] = React.useState('Useless Placeholder');
+    const [value, onChangeText] = React.useState("Useless Placeholder");
 
     const register = async () =>
     {
@@ -36,44 +36,45 @@ const OnBoardingRegistration = ({ navigation }: Props) =>
     }
 
     return (
-        <KeyboardAvoidingView style={styles.container}>
+        <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
             <TextInput
                 style={styles.input}
-                placeholder='Username'
+                placeholder="Username"
                 autoCapitalize="none"
-                placeholderTextColor='white'
-                // onChangeText={val => this.onChangeText('username', val)}
+                placeholderTextColor="white"
+            // onChangeText={val => this.onChangeText("username", val)}
             />
             <TextInput
                 style={styles.input}
-                placeholder='Password'
+                placeholder="Password"
                 secureTextEntry={true}
                 autoCapitalize="none"
-                placeholderTextColor='white'
-                // onChangeText={val => this.onChangeText('password', val)}
+                placeholderTextColor="white"
+            // onChangeText={val => this.onChangeText("password", val)}
             />
             <TextInput
                 style={styles.input}
-                placeholder='Email'
+                placeholder="Email"
                 autoCapitalize="none"
-                placeholderTextColor='white'
-                // onChangeText={val => this.onChangeText('email', val)}
+                placeholderTextColor="white"
+            // onChangeText={val => this.onChangeText("email", val)}
             />
             <TextInput
                 style={styles.input}
-                placeholder='Phone Number'
+                placeholder="Phone Number"
                 autoCapitalize="none"
-                placeholderTextColor='white'
-                // onChangeText={val => this.onChangeText('phone_number', val)}
+                placeholderTextColor="white"
+            // onChangeText={val => this.onChangeText("phone_number", val)}
             />
             <Button
-                title='Sign Up'
+                style={styles.button}
+                title="Sign Up"
             // onPress={this.signUp}
             />
         </KeyboardAvoidingView>
         // <KeyboardAvoidingView style={styles.container}>
         //     <TextInput
-        //         style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
+        //         style={{ height: 40, borderColor: "gray", borderWidth: 1 }}
         //         onChangeText={text => onChangeText(text)}
         //         value={value}
         //     />
@@ -89,18 +90,21 @@ const styles = StyleSheet.create({
     input: {
         width: 350,
         height: 55,
-        backgroundColor: '#42A5F5',
+        backgroundColor: "#42A5F5",
         margin: 10,
         padding: 8,
-        color: 'white',
+        color: "white",
         borderRadius: 14,
         fontSize: 18,
-        fontWeight: '500',
+        fontWeight: "500",
     },
     container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
+        justifyContent: "center",
+        alignItems: "center"
+    },
+    button: {
+        width: 300
     }
 })
 
