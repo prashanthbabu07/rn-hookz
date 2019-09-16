@@ -48,6 +48,9 @@ const OnBoardingRegistration = ({ navigation }: Props) =>
             scrollEnabled={enabled}
             extraScrollHeight={10}>
             <View style={styles.container}>
+                <Text>
+                    Sign Up
+                </Text>
                 <TextInput
                     style={styles.input}
                     placeholder="Username"
