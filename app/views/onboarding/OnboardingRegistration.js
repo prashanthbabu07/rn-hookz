@@ -44,7 +44,7 @@ const OnBoardingRegistration = ({ navigation }: Props) =>
 
     return (
         <KeyboardAwareScrollView
-            contentContainerStyle={{ justifyContent: 'center', alignItems: 'center', height: "100%" }}
+            contentContainerStyle={styles.keyboardAware}
             scrollEnabled={enabled}
             extraScrollHeight={10}>
             <View style={styles.container}>
@@ -119,6 +119,11 @@ const styles = StyleSheet.create({
     },
     button: {
         width: 300
+    },
+    keyboardAware: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: "100%"
     }
 })
 
