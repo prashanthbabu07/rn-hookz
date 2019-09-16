@@ -103,7 +103,7 @@ const OnBoardingRegistration = ({ navigation }: Props) =>
 const styles = StyleSheet.create({
     input: {
         width: 350,
-        height: 55,
+        height: 50,
         backgroundColor: "#42A5F5",
         margin: 10,
         padding: 8,
