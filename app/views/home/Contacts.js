@@ -3,7 +3,7 @@
  * @flow
  */
 
-import React from "react";
+import React, { useEffect } from "react";
 import
 {
     View,
@@ -13,6 +13,7 @@ import
 } from "react-native";
 import { Button, ListItem } from "react-native-elements";
 import { APP_ROUTE_NAMES } from "../../constants/RouteNames";
+import { readPhoneContacts } from "../../actions/Contacts";
 
 type Props = {
     navigation: any
@@ -82,6 +83,11 @@ const Contacts = ({ navigation }: Props) =>
             subtitle: 'Vice Chairman'
         },
     ];
+
+    useEffect(() =>
+    {
+        readPhoneContacts();
+    });
 
     const keyExtractor = (item, index) => index.toString();
 
