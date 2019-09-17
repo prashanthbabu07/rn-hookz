@@ -1,7 +1,7 @@
 import { createSwitchNavigator, createAppContainer, createStackNavigator } from "react-navigation";
-import Init from "../views/init/Init";
-import OnboardingStack from "../views/onboarding";
-import Home from "../views/home";
+import Init from "../features/AppInit";
+import OnboardingStack from "../features/Onboarding";
+import Home from "../features/AppHome";
 import React from "react";
 import { APP_ROUTE_NAMES } from "../constants/RouteNames";
 

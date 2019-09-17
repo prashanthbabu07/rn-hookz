@@ -1,5 +1,5 @@
 import * as signalr from '@aspnet/signalr';
-import { increment } from '../actions/Counter';
+import { increment } from '../features/Counter/actions';
 
 const signalrMiddleware = (url) =>
 {

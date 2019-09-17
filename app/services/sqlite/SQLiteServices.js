@@ -12,6 +12,7 @@ SQLite.enablePromise(true);
 //     });
 // }
 
+
 const SQLiteDatabase = SQLite.openDatabase({
     name: 'hookz.sqlite3',
     location: 'default',

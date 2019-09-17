@@ -5,8 +5,8 @@ import
     createAppContainer,
     createStackNavigator,
 } from "react-navigation";
-import OnBoardingHome from "./OnboardingHome";
-import OnBoardingRegistration from "./OnboardingRegistration";
+import OnBoardingHome from "../OnboardingHome";
+import OnBoardingRegistration from "../OnboardingRegistration";
 import { APP_ROUTE_NAMES } from "../../constants/RouteNames";
 
 let routerConfig = {};

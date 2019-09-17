@@ -4,7 +4,7 @@
  */
 
 import { ethers } from 'ethers';
-import { AX_INCREMENT_COUNTER, AX_DECREMENT_COUNTER } from '../constants/CounterActionTypes';
+import { AX_INCREMENT_COUNTER, AX_DECREMENT_COUNTER } from '../../constants/CounterActionTypes';
 
 export function increment()
 {

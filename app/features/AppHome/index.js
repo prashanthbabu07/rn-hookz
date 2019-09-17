@@ -6,12 +6,12 @@
 import React from "react";
 import { createBottomTabNavigator, createStackNavigator } from "react-navigation";
 import { APP_ROUTE_NAMES } from "../../constants/RouteNames";
-import Settings from "./Settings";
-import Contacts from "./Contacts";
-import Messages from "./Messages";
+import Settings from "../Settings";
+import Contacts from "../ContactList";
+import Messages from "../Messages";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import HomeIconWithBadge from "../../components/HomeIconWithBadge";
-import Conversation from "./Conversation";
+import Conversation from "../Conversation";
 import { View, Text, Image } from "react-native";
 
 let routeHomeTabConfig = {};

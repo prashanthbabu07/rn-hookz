@@ -2,7 +2,7 @@ import { View, ActivityIndicator, Button } from "react-native";
 import AsyncStorage from "@react-native-community/async-storage";
 import React, { useEffect } from "react";
 import { StyleSheet } from "react-native";
-import { getUserOnboardingState } from "../../actions/UserOnboarding";
+import { getUserOnboardingState } from "../OnboardingRegistration/actions";
 import { useDispatch, useSelector } from "react-redux";
 import userDefault from "../../services/sqlite/defaults/UserDefault";
 import { APP_ROUTE_NAMES } from "../../constants/RouteNames";

@@ -13,7 +13,7 @@ import
 } from "react-native";
 import { Button, ListItem } from "react-native-elements";
 import { APP_ROUTE_NAMES } from "../../constants/RouteNames";
-import { readPhoneContacts } from "../../actions/Contacts";
+import { readPhoneContacts } from "./actions";
 
 type Props = {
     navigation: any
