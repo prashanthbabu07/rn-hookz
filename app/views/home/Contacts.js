@@ -9,8 +9,9 @@ import
     View,
     Text,
     StyleSheet,
+    FlatList
 } from "react-native";
-import { Button } from "react-native-elements";
+import { Button, ListItem } from "react-native-elements";
 import { APP_ROUTE_NAMES } from "../../constants/RouteNames";
 
 type Props = {
@@ -19,11 +20,89 @@ type Props = {
 
 const Contacts = ({ navigation }: Props) => 
 {
+    const list = [
+        {
+            name: 'Amy Farha',
+            avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+            subtitle: 'Vice President'
+        },
+        {
+            name: 'Chris Jackson',
+            avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+            subtitle: 'Vice Chairman'
+        },
+        {
+            name: 'Amy Farha',
+            avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+            subtitle: 'Vice President'
+        },
+        {
+            name: 'Chris Jackson',
+            avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+            subtitle: 'Vice Chairman'
+        },
+        {
+            name: 'Amy Farha',
+            avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+            subtitle: 'Vice President'
+        },
+        {
+            name: 'Chris Jackson',
+            avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+            subtitle: 'Vice Chairman'
+        },
+        {
+            name: 'Amy Farha',
+            avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+            subtitle: 'Vice President'
+        },
+        {
+            name: 'Chris Jackson',
+            avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+            subtitle: 'Vice Chairman'
+        },
+        {
+            name: 'Amy Farha',
+            avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+            subtitle: 'Vice President'
+        },
+        {
+            name: 'Chris Jackson',
+            avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+            subtitle: 'Vice Chairman'
+        },
+        {
+            name: 'Amy Farha',
+            avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+            subtitle: 'Vice President'
+        },
+        {
+            name: 'Chris Jackson',
+            avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+            subtitle: 'Vice Chairman'
+        },
+    ];
+
+    const keyExtractor = (item, index) => index.toString();
+
+    const renderItem = ({ item }) => (
+        <ListItem
+            title={item.name}
+            subtitle={item.subtitle}
+            leftAvatar={{ source: { uri: item.avatar_url } }}
+            bottomDivider
+            chevron
+            badge={{ value: 300, textStyle: { color: "white" }, containerStyle: { marginTop: -20 } }}
+            onPress={() => navigation.navigate(APP_ROUTE_NAMES.home.conversation.name)}
+        />
+    );
+
     return (
-        <View style={styles.container}>
-            <Text>List of contacts</Text>
-            <Button title="Conversation" onPress={() => navigation.navigate(APP_ROUTE_NAMES.home.conversation.name)}></Button>
-        </View >
+        <FlatList
+            keyExtractor={keyExtractor}
+            data={list}
+            renderItem={renderItem}
+        />
     );
 }
 

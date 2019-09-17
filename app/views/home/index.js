@@ -12,6 +12,7 @@ import Messages from "./Messages";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import HomeIconWithBadge from "../../components/HomeIconWithBadge";
 import Conversation from "./Conversation";
+import { View, Text, Image } from "react-native";
 
 let routeHomeTabConfig = {};
 
@@ -77,22 +78,71 @@ const tabNavigator = createBottomTabNavigator(routeHomeTabConfig, {
 let routeHomeStackConfig = {};
 routeHomeStackConfig[APP_ROUTE_NAMES.home.mainTab.name] = {
     screen: tabNavigator,
-    // navigationOptions: ({ navigation }) =>
-    // {
+    navigationOptions: ({ navigation }) =>
+    {
+        const { routeName } = navigation.state.routes[navigation.state.index]
+        console.log(routeName);
+        let title = APP_ROUTE_NAMES.home.mainTab.contacts.title;
 
-    //     const navRoute = getCurrentRoute(navigation.state);
-    //     console.log(navRoute.key)
+        if (routeName === APP_ROUTE_NAMES.home.mainTab.contacts.name)
+        {
+            return {
+                // title: APP_ROUTE_NAMES.home.mainTab.contacts.title,
+                headerTitle: (
+                    <View style={{
+                        flex: 1,
+                        flexDirection: 'row',
+                        justifyContent: "center"
+                    }}>
+                        <Image
+                            resizeMode="cover"
+                            style={{
+                                width: 20,
+                                height: 20,
+                                borderRadius: 10
+                            }}
+                            source={{
+                            uri: "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg"
+                        }}></Image>
+                    <Text style={{
+                        flex: 1,
+                        fontSize: 18,
+                        fontWeight: '700',
+                        color: '#53799d',
+                        textAlign: 'center'
+                    }}>
+                        Test</Text></View>),
+            headerRight: (
+                <View style={{
+                    flexDirection: "row",
+                    justifyContent: "space-evenly",
+                    width: 120
+                }}>
+                    <Ionicons name="ios-options" size={25} />
+                    <Ionicons name="ios-options" size={25} />
+                </View>
+            )
+        }
+    }
 
-    //     return {
-    //         title: navRoute.key || "Hookz",
-    //         headerRight: (
-    //             <View style={styles.iconContainer}>
-    //                 <Ionicons name="ios-options" size={25} />
-    //                 <Ionicons name="ios-options" size={25} />
-    //             </View>
-    //         )
-    //     };
-    // }
+        if(routeName === APP_ROUTE_NAMES.home.mainTab.settings.name)
+{
+    return {
+        title: APP_ROUTE_NAMES.home.mainTab.settings.title
+    }
+}
+
+if (routeName === APP_ROUTE_NAMES.home.mainTab.messages.name)
+{
+    return {
+        title: APP_ROUTE_NAMES.home.mainTab.messages.title
+    }
+}
+
+return {
+    title: "Hookz"
+};
+    }
 };
 
 routeHomeStackConfig[APP_ROUTE_NAMES.home.conversation.name] = {

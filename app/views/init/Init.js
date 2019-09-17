@@ -13,7 +13,7 @@ const Init = ({ navigation }) =>
     const getOnboardingState = async () =>
     {
         const value = await AsyncStorage.getItem(KV_IS_USER_ONBOARDED);
-        navigation.navigate(value == "true" ? APP_ROUTE_NAMES.home.name : APP_ROUTE_NAMES.onboarding.name);
+        navigation.navigate(value == "true" ? APP_ROUTE_NAMES.home.name : APP_ROUTE_NAMES.home.name);
     }
 
     useEffect(() =>

@@ -21,13 +21,16 @@ export const APP_ROUTE_NAMES = {
         mainTab: {
             name: "home-main-tab",
             settings: {
-                name: "home-main-tab-settings"
+                name: "home-main-tab-settings",
+                title: "Hookz Settings"
             },
             contacts: {
-                name: "home-main-tab-contacts"
+                name: "home-main-tab-contacts",
+                title: "Contacts"
             },
             messages: {
-                name: "home-main-tab-messages"
+                name: "home-main-tab-messages",
+                title: "Messages"
             }
         },
         conversation: {

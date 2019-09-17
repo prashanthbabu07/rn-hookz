@@ -38,7 +38,7 @@ const OnBoardingRegistration = ({ navigation }: Props) =>
 
     const register = async () =>
     {
-        const result = await AsyncStorage.setItem(KV_IS_USER_ONBOARDED, "false");
+        // const result = await AsyncStorage.setItem(KV_IS_USER_ONBOARDED, "false");
         navigation.navigate(APP_ROUTE_NAMES.home.name);
     }
 
@@ -83,7 +83,7 @@ const OnBoardingRegistration = ({ navigation }: Props) =>
                 <Button
                     style={styles.button}
                     title="Sign Up"
-                // onPress={this.signUp}
+                    onPress={() => register()}
                 />
             </View>
         </KeyboardAwareScrollView>

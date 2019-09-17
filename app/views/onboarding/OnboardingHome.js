@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     mainTitle: {
         fontSize: 40,
         fontWeight: "bold",
-        color: "royalblue"
+        color: "#42A5F5"
     },
     subTitle: {
         fontSize: 16,
