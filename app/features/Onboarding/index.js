@@ -7,7 +7,7 @@ import
 } from "react-navigation";
 import OnBoardingHome from "../OnboardingHome";
 import OnBoardingRegistration from "../OnboardingRegistration";
-import { APP_ROUTE_NAMES } from "../../constants/RouteNames";
+import { APP_ROUTE_NAMES } from "../../AppRouteDefination";
 
 let routerConfig = {};
 

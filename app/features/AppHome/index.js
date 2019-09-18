@@ -5,7 +5,7 @@
 
 import React from "react";
 import { createBottomTabNavigator, createStackNavigator } from "react-navigation";
-import { APP_ROUTE_NAMES } from "../../constants/RouteNames";
+import { APP_ROUTE_NAMES } from "../../AppRouteDefination";
 import Settings from "../Settings";
 import Contacts from "../ContactList";
 import Messages from "../Messages";

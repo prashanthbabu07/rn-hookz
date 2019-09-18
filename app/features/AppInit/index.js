@@ -5,8 +5,8 @@ import { StyleSheet } from "react-native";
 import { getUserOnboardingState } from "../OnboardingRegistration/actions";
 import { useDispatch, useSelector } from "react-redux";
 import userDefault from "../../services/sqlite/defaults/UserDefault";
-import { APP_ROUTE_NAMES } from "../../constants/RouteNames";
-import { KV_IS_USER_ONBOARDED } from "../../constants/UserDefaults";
+import { APP_ROUTE_NAMES } from "../../AppRouteDefination";
+import { KV_IS_USER_ONBOARDED } from "../OnboardingRegistration/constants";
 
 const Init = ({ navigation }) => 
 {

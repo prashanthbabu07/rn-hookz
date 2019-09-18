@@ -1,9 +1,9 @@
 import { createSwitchNavigator, createAppContainer, createStackNavigator } from "react-navigation";
-import Init from "../features/AppInit";
-import OnboardingStack from "../features/Onboarding";
-import Home from "../features/AppHome";
+import Init from "./features/AppInit";
+import OnboardingStack from "./features/Onboarding";
+import Home from "./features/AppHome";
 import React from "react";
-import { APP_ROUTE_NAMES } from "../constants/RouteNames";
+import { APP_ROUTE_NAMES } from "./AppRouteDefination";
 
 
 let routerConfig = {};

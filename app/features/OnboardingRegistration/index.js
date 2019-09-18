@@ -17,9 +17,9 @@ import
 import { Button } from "react-native-elements";
 import userDefault from "../../services/sqlite/defaults/UserDefault";
 import { USER_ONBOARDED } from "../../services/sqlite/defaults/keys";
-import { APP_ROUTE_NAMES } from "../../constants/RouteNames";
+import { APP_ROUTE_NAMES } from "../../AppRouteDefination";
 import AsyncStorage from "@react-native-community/async-storage";
-import { KV_IS_USER_ONBOARDED } from "../../constants/UserDefaults";
+import { KV_IS_USER_ONBOARDED } from "./constants";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 type Props = {

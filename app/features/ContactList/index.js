@@ -12,7 +12,7 @@ import
     FlatList
 } from "react-native";
 import { Button, ListItem } from "react-native-elements";
-import { APP_ROUTE_NAMES } from "../../constants/RouteNames";
+import { APP_ROUTE_NAMES } from "../../AppRouteDefination";
 import { readPhoneContacts } from "./actions";
 
 type Props = {

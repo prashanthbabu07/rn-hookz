@@ -12,7 +12,7 @@ import
     TouchableOpacity
 } from "react-native";
 import { Button } from "react-native-elements";
-import { APP_ROUTE_NAMES } from "../../constants/RouteNames";
+import { APP_ROUTE_NAMES } from "../../AppRouteDefination";
 
 type Props = {
     navigation: any

@@ -6,7 +6,7 @@
 import React, { Component, useEffect } from "react";
 import { Provider, useSelector, useDispatch } from "react-redux";
 import store from "./Store";
-import AppNavigator from "./navigations/AppNavigator";
+import AppNavigator from "./AppNavigator";
 
 const App = () => 
 {

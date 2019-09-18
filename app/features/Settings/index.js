@@ -14,9 +14,9 @@ import
 import { Button } from "react-native-elements";
 import userDefault from "../../services/sqlite/defaults/UserDefault";
 import { USER_ONBOARDED } from "../../services/sqlite/defaults/keys";
-import { HOME_ROUTE } from "../../constants/RouteNames";
+import { HOME_ROUTE } from "../../AppRouteDefination";
 import AsyncStorage from "@react-native-community/async-storage";
-import { IS_USER_ONBOARDED } from "../../constants/UserDefaults";
+import { IS_USER_ONBOARDED } from "../OnboardingRegistration/constants";
 
 const Settings = () => 
 {
