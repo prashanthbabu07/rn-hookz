@@ -6,22 +6,11 @@ import React from "react";
 import { APP_ROUTE_NAMES } from "./AppRouteDefination";
 
 
-let routerConfig = {};
-
-routerConfig[APP_ROUTE_NAMES.init.name] = Init;
-
-routerConfig[APP_ROUTE_NAMES.onboarding.name] = OnboardingStack;
-
-routerConfig[APP_ROUTE_NAMES.home.name] = Home;
-
-// createStackNavigator({
-//     home: {
-//         screen: Home,
-//         navigationOptions: {
-//             title: "Home"
-//         }
-//     }
-// });
+let routerConfig = {
+    [APP_ROUTE_NAMES.init.name]: Init,
+    [APP_ROUTE_NAMES.onboarding.name]: OnboardingStack,
+    [APP_ROUTE_NAMES.home.name]: Home
+};
 
 const AppNavigator = createSwitchNavigator(routerConfig);
 

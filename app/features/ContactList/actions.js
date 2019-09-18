@@ -5,7 +5,7 @@
 
 import Contacts from "react-native-contacts";
 import { PermissionsAndroid, Platform } from 'react-native';
-import { AX_CONTACTS_FETCHED, AX_CONTACTS_FETCHING } from "./constants";
+import { AX_CONTACTS_FETCHED, AX_CONTACTS_FETCHING, AX_CONTACT_ADD } from "./constants";
 
 const readPhoneContactsiOS = callback =>
 {
@@ -72,4 +72,11 @@ export function readPhoneContacts()
             readPhoneContactsAndroid(cb);
         }
     }
+}
+
+export function addContactToList()
+{
+    return {
+        type: AX_CONTACT_ADD
+    };
 }

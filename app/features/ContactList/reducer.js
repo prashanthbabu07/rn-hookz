@@ -45,9 +45,13 @@ const contactListByIdReducer = (state = contactListById, action, { listedIds }) 
                 ...state,
                 ...fetchedContacts
             };
+        case AX_CONTACT_ADD:
+            return {
+                ...state,
+                [`c-${action.payload.recordID}`]: contactReducer(action.payload, action)
+            };
         default:
             return state;
-
     }
 }
 
@@ -59,6 +63,8 @@ const contactListedIdsReducer = (state = contactListedIds, action, { byId }) =>
             let contacts = action.payload;
             let ids = contacts.map(c => c.recordID);
             return [...state, ...ids];
+        case AX_CONTACT_ADD:
+            return [...state, action.payload.recordID];
         default:
             return state;
     }
@@ -71,7 +77,6 @@ const initialState = {
 };
 const constactListReducer = (state = initialState, action) =>
 {
-    console.log("actions--->", action.type);
     switch (action.type)
     {
         case AX_CONTACTS_FETCHING:
@@ -86,6 +91,17 @@ const constactListReducer = (state = initialState, action) =>
                 // ...state,
                 fetching: false
             }
+        case AX_CONTACT_ADD:
+            let payload = {
+                givenName: `Contact ${state.listedIds.length}`,
+                title: "",
+                recordID: `cid-${state.listedIds.length}`
+            }
+            return {
+                fetching: false,
+                byId: contactListByIdReducer(state.byId, { type: action.type, payload }, state),
+                listedIds: contactListedIdsReducer(state.listedIds, { type: action.type, payload }, state)
+            };
         default:
             return state;
         // return {

@@ -3,7 +3,7 @@
  * @flow
  */
 
-import React, { useEffect } from "react";
+import React, { useEffect, Fragment } from "react";
 import
 {
     View,
@@ -14,9 +14,10 @@ import
 } from "react-native";
 import { Button, ListItem } from "react-native-elements";
 import { APP_ROUTE_NAMES } from "../../AppRouteDefination";
-import { readPhoneContacts } from "./actions";
+import { readPhoneContacts, addContactToList } from "./actions";
 import { useSelector, useDispatch } from "react-redux";
 import { incrementAsync } from "../Counter/actions";
+import { addContact } from "react-native-contacts";
 
 type Props = {
     navigation: any
@@ -73,10 +74,13 @@ const Contacts = ({ navigation }: Props) =>
                 <Button title="Async+" onPress={() => dispatch(incrementAsync())}></Button>
             </View>
             :
-            <FlatList
-                keyExtractor={keyExtractor}
-                data={list}
-                renderItem={renderItem}></FlatList>
+            <Fragment>
+                <Button title="Add Random Contact" onPress={() => dispatch(addContactToList())}></Button>
+                <FlatList
+                    keyExtractor={keyExtractor}
+                    data={list}
+                    renderItem={renderItem}></FlatList>
+            </Fragment>
     );
 }
 

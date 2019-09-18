@@ -15,30 +15,26 @@ import Conversation from "../Conversation";
 import { View, Text, Image } from "react-native";
 import { incrementAsync } from "../Counter/actions";
 
-let routeHomeTabConfig = {};
-
-routeHomeTabConfig[APP_ROUTE_NAMES.home.mainTab.settings.name] = {
-    screen: Settings,
-    navigationOptions: {
-        title: "Settings"
+let routeHomeTabConfig = {
+    [APP_ROUTE_NAMES.home.mainTab.settings.name]: {
+        screen: Settings,
+        navigationOptions: {
+            title: "Settings"
+        }
+    },
+    [APP_ROUTE_NAMES.home.mainTab.contacts.name]: {
+        screen: Contacts,
+        navigationOptions: {
+            title: "Contacts"
+        }
+    },
+    [APP_ROUTE_NAMES.home.mainTab.messages.name]: {
+        screen: Messages,
+        navigationOptions: {
+            title: "Messages"
+        }
     }
-}
-
-routeHomeTabConfig[APP_ROUTE_NAMES.home.mainTab.contacts.name] = {
-    screen: Contacts,
-    navigationOptions: {
-        title: "Contacts"
-    }
-}
-
-routeHomeTabConfig[APP_ROUTE_NAMES.home.mainTab.messages.name] = {
-    screen: Messages,
-    navigationOptions: {
-        title: "Messages"
-    }
-}
-
-
+};
 
 const tabNavigator = createBottomTabNavigator(routeHomeTabConfig, {
     defaultNavigationOptions: ({ navigation }) => ({
