@@ -22,11 +22,11 @@ import { useSelector } from "react-redux";
 const Settings = () => 
 {
 
-    const counterState = useSelector(state => state.counter);
+    const contactListState = useSelector(state => state.contactList);
 
     return (
         <View style={styles.container}>
-            <Text> {`Settings Screen - Count: ${counterState.counter}`}</Text>
+            <Text> {`Settings Screen - Count: ${contactListState.listedIds.length}`}</Text>
         </View >
     );
 }

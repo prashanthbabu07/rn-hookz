@@ -17,6 +17,18 @@ type Contact = {
 let contactListById = {};
 let contactListedIds = [];
 
+const STORE_SIZE = 30;
+for (let i = 0; i < STORE_SIZE; i++)
+{
+    let nextId = 'c-' + i
+    contactListedIds.push(nextId)
+    contactListById[nextId] = {
+        givenName: 'Item ' + i,
+        recordID: nextId,
+        title: "title" + i,
+    };
+}
+
 const contactReducer = (state, action) =>
 {
     switch (action.type)
@@ -47,8 +59,8 @@ const contactListByIdReducer = (state = contactListById, action, { listedIds }) 
             };
         case AX_CONTACT_ADD:
             return {
-                ...state,
-                [`c-${action.payload.recordID}`]: contactReducer(action.payload, action)
+                [`c-${action.payload.recordID}`]: contactReducer(action.payload, action),
+                ...state
             };
         default:
             return state;
@@ -94,7 +106,7 @@ const constactListReducer = (state = initialState, action) =>
         case AX_CONTACT_ADD:
             let payload = {
                 givenName: `Contact ${state.listedIds.length}`,
-                title: "",
+                title: "something...",
                 recordID: `cid-${state.listedIds.length}`
             }
             return {
