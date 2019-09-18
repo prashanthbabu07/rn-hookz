@@ -48,7 +48,7 @@ const Contacts = ({ navigation }: Props) =>
     useEffect(() =>
     {
         dispatch(readPhoneContacts());
-    }, [contactListState.fetching]);
+    }, []);
 
     // const keyExtractor = (contact) => contact.recordID.toString();
     const keyExtractor = contact => contact.recordID;
@@ -70,7 +70,6 @@ const Contacts = ({ navigation }: Props) =>
         contactListState.fetching ?
             <View>
                 <ActivityIndicator></ActivityIndicator>
-                {/* <Text>{counterState.counter}</Text> */}
                 <Button title="Async+" onPress={() => dispatch(incrementAsync())}></Button>
             </View>
             :
