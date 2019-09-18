@@ -17,12 +17,16 @@ import { USER_ONBOARDED } from "../../services/sqlite/defaults/keys";
 import { HOME_ROUTE } from "../../AppRouteDefination";
 import AsyncStorage from "@react-native-community/async-storage";
 import { IS_USER_ONBOARDED } from "../OnboardingRegistration/constants";
+import { useSelector } from "react-redux";
 
 const Settings = () => 
 {
+
+    const counterState = useSelector(state => state.counter);
+
     return (
         <View style={styles.container}>
-            <Text>Settings Screen</Text>
+            <Text> {`Settings Screen - Count: ${counterState.counter}`}</Text>
         </View >
     );
 }

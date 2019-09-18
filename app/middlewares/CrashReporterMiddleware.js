@@ -6,7 +6,7 @@ const crashReporterMiddleware = store => next => action =>
     }
     catch (error)
     {
-        console.error('Caught an exception!', err);
+        console.error('Caught an exception!', error);
         console.log('Send crash logs to app server');
         throw error;
     }

@@ -5,20 +5,23 @@
 
 import Contacts from "react-native-contacts";
 import { PermissionsAndroid, Platform } from 'react-native';
+import { AX_CONTACTS_FETCHED, AX_CONTACTS_FETCHING } from "./constants";
 
-const readPhoneContactsiOS = () =>
+const readPhoneContactsiOS = callback =>
 {
     Contacts.getAll((err, contacts) =>
     {
         if (err)
         {
-            throw err;
+            console.log("error--->", err);
+            // throw err;
         }
         console.log("Contacts", contacts);
+        callback(contacts);
     });
 }
 
-const readPhoneContactsAndroid = () =>
+const readPhoneContactsAndroid = callback =>
 {
     PermissionsAndroid
         .request(
@@ -32,11 +35,12 @@ const readPhoneContactsAndroid = () =>
             {
                 if (err === 'denied')
                 {
-                    // error
+                    console.log("error--->", err);
                 }
                 else
                 {
                     console.log("Contacts", contacts);
+                    callback(contacts);
                 }
             });
         });
@@ -44,15 +48,28 @@ const readPhoneContactsAndroid = () =>
 
 export function readPhoneContacts()
 {
+    console.log("readPhoneContacts-->")
     return dispatch => 
     {
+        // dispatch({
+        //     type: AX_CONTACTS_FETCHING
+        // });
+
+        const cb = contacts => 
+        {
+            dispatch({
+                type: AX_CONTACTS_FETCHED,
+                payload: contacts
+            })
+        }
+
         if (Platform.OS === "ios")
         {
-            readPhoneContactsiOS();
+            readPhoneContactsiOS(cb);
         }
         else
         {
-            readPhoneContactsAndroid();
+            readPhoneContactsAndroid(cb);
         }
     }
 }

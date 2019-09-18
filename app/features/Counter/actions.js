@@ -22,6 +22,7 @@ export function decrement()
 
 export function incrementAsync(delay: number = 1000)
 {
+    console.log("incrementAsync");
     return (dispatch: any) =>
     {
         setTimeout(() =>

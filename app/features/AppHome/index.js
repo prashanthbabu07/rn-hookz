@@ -13,6 +13,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import HomeIconWithBadge from "../../components/HomeIconWithBadge";
 import Conversation from "../Conversation";
 import { View, Text, Image } from "react-native";
+import { incrementAsync } from "../Counter/actions";
 
 let routeHomeTabConfig = {};
 
@@ -102,46 +103,46 @@ routeHomeStackConfig[APP_ROUTE_NAMES.home.mainTab.name] = {
                                 borderRadius: 10
                             }}
                             source={{
-                            uri: "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg"
-                        }}></Image>
-                    <Text style={{
-                        flex: 1,
-                        fontSize: 18,
-                        fontWeight: '700',
-                        color: '#53799d',
-                        textAlign: 'center'
+                                uri: "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg"
+                            }}></Image>
+                        <Text style={{
+                            flex: 1,
+                            fontSize: 18,
+                            fontWeight: '700',
+                            color: '#53799d',
+                            textAlign: 'center'
+                        }}>
+                            Test</Text></View>),
+                headerRight: (
+                    <View style={{
+                        flexDirection: "row",
+                        justifyContent: "space-evenly",
+                        width: 120
                     }}>
-                        Test</Text></View>),
-            headerRight: (
-                <View style={{
-                    flexDirection: "row",
-                    justifyContent: "space-evenly",
-                    width: 120
-                }}>
-                    <Ionicons name="ios-options" size={25} />
-                    <Ionicons name="ios-options" size={25} />
-                </View>
-            )
+                        <Ionicons name="ios-options" size={25} onPress={() => incrementAsync()} />
+                        <Ionicons name="ios-options" size={25} />
+                    </View>
+                )
+            }
         }
-    }
 
-        if(routeName === APP_ROUTE_NAMES.home.mainTab.settings.name)
-{
-    return {
-        title: APP_ROUTE_NAMES.home.mainTab.settings.title
-    }
-}
+        if (routeName === APP_ROUTE_NAMES.home.mainTab.settings.name)
+        {
+            return {
+                title: APP_ROUTE_NAMES.home.mainTab.settings.title
+            }
+        }
 
-if (routeName === APP_ROUTE_NAMES.home.mainTab.messages.name)
-{
-    return {
-        title: APP_ROUTE_NAMES.home.mainTab.messages.title
-    }
-}
+        if (routeName === APP_ROUTE_NAMES.home.mainTab.messages.name)
+        {
+            return {
+                title: APP_ROUTE_NAMES.home.mainTab.messages.title
+            }
+        }
 
-return {
-    title: "Hookz"
-};
+        return {
+            title: "Hookz"
+        };
     }
 };
 

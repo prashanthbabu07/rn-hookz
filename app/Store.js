@@ -7,9 +7,11 @@ import signalr from './middlewares/SignalrMiddleware';
 import crashReporterMiddleware from './middlewares/CrashReporterMiddleware';
 // import AppNavigatorReducer from "./AppNavigatorReducer";
 import signalrConfig from "./configs/SignalrConfig";
+import constactListReducer from './features/ContactList/reducer';
 
 const combinedReducers = combineReducers({
     counter: counterReducer,
+    contactList: constactListReducer
     //onboarding: userOnboardingReducer
 });
 
@@ -19,7 +21,7 @@ const store = createStore(
         loggerMiddleware,
         crashReporterMiddleware,
         thunk,
-        signalr(signalrConfig.api)
+        // signalr(signalrConfig.api)
     )
 );
 
