@@ -16,7 +16,7 @@ const readPhoneContactsiOS = callback =>
             console.log("error--->", err);
             // throw err;
         }
-        console.log("Contacts", contacts);
+        // console.log("Contacts", contacts);
         callback(contacts);
     });
 }
@@ -39,7 +39,7 @@ const readPhoneContactsAndroid = callback =>
                 }
                 else
                 {
-                    console.log("Contacts", contacts);
+                    // console.log("Contacts", contacts);
                     callback(contacts);
                 }
             });
@@ -48,7 +48,7 @@ const readPhoneContactsAndroid = callback =>
 
 export function readPhoneContacts()
 {
-    console.log("readPhoneContacts-->")
+    // console.log("readPhoneContacts-->")
     return dispatch => 
     {
         // dispatch({

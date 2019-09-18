@@ -31,7 +31,7 @@ const Contacts = ({ navigation }: Props) =>
     const dispatch = useDispatch();
 
     const list = Object.keys(contactListState.byId).map(k => contactListState.byId[k]);
-    console.log("Listed---->", list);
+    // console.log("Listed---->", list);
 
     // const list = [
     //     {
