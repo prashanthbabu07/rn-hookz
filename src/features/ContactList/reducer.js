@@ -17,7 +17,7 @@ type Contact = {
 let contactListById = {};
 let contactListedIds = [];
 
-const STORE_SIZE = 30;
+const STORE_SIZE = 1000;
 for (let i = 0; i < STORE_SIZE; i++)
 {
     let nextId = 'c-' + i
